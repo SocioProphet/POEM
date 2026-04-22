@@ -11,12 +11,13 @@ import IndividualInstrumentPage from './pages/instruments/individual/page';
 import Scales from './pages/Scales';
 import Glossary from './pages/Glossary';
 import Search from './pages/Search';
+import SummarizePage from './components/SummarizePage';
 export default function App() {
   return (
     <div className='flex flex-col min-h-screen'>
     <NavBar />
     <main className='w-full grow mx-auto m-0'>
-          {/*<SummarizePage/>*/}
+          <SummarizePage/>
     <Routes>
        
       <Route path = "/" element = {<Home />} />
