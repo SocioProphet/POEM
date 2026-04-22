@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import CountBox from "../../components/countBox";
 import Scales from "../../components/Scales";
 import { apiFetch } from "../../api/api";
+import Loading from "../../components/Loading";
 
 type Params = {
   id: string;
@@ -20,15 +21,16 @@ export default function InstrumentPage() {
   const [name, setName] = useState("");
   const [instrumentCount, setInstrumentCount] = useState(0);
   const [languageCount, setLanguageCount] = useState(0);
-
+  const [dataloaded, setDataLoaded] = useState<boolean>(false);
   const [scales, setScales] = useState([""]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     setName(id ? id : "");
-  }, []);
+  }, [id]);
   useEffect(() => {
     const getInstrumentInfo = async () => {
       try {
+       setLoading(true);
         const res = await apiFetch(`/${name}`);
         const data = await res.json();
         setInstrumentCount(data.count);
@@ -36,23 +38,26 @@ export default function InstrumentPage() {
         if(data.scales !== undefined && data.scales.length > 0){ 
           setScales(data.scales);
         }
+        setDataLoaded(true);
         console.log(data);
-        setLoading(false);
       } catch (err) {
         console.error("Fetch failed:", err);
+      }finally{
+         setLoading(false);
       }
     };
+    
     getInstrumentInfo();
+   
   }, [name]);
-  if (loading) {
-    return (
-      <div className="flex items-center justify-center h-screen ">
-        <p className="p-5 bg-gradient-to-r from-amber-400 to-amber-500 ">
-          Loading...
-        </p>
-      </div>
-    );
-  }
+  const isReady: boolean =
+  !loading &&
+  instrumentCount !== 0 &&
+  languageCount !== 0;
+
+if (loading || !dataloaded) {
+  return <Loading />;
+}
   return (
     <div>
       <section className="bg-slate-700 text-white py-20">

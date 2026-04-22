@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { apiFetch } from "../../../api/api";
+import Loading from "../../../components/Loading";
 type Params = {
   id: string;
 };
@@ -32,7 +33,7 @@ export default function IndividualInstrumentPage()
     }, [id]);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <Loading/>
     }
 
     return (<div>

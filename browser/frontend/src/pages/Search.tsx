@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 import { apiFetch } from "../api/api";
 import { useSearchParams } from "react-router-dom";
 import  { staticPages } from "./Home"
+import Loading from "../components/Loading";
 export default function Search(){
     const [results, setResults] =  useState<Page[]>([]);
     const [searchParams] = useSearchParams()
+    const [loading, setLoading] = useState<Boolean>(false);
     const query: string  = searchParams.get("q") || ""
      async function searchGraph(query: string){
         const q = query.toLowerCase();
@@ -64,8 +66,14 @@ export default function Search(){
       return [...prev, ...updatedUnique];
     });
   };
+  setLoading(true);
   runSearch();
+  setLoading(false);
+
   }, [query]);
+  if(loading){
+    return <Loading/>
+  }
      return (
         <div className="flex flex-col gap-6 items-center mt-12 "> <h2 className="text-3xl font-bold text-slate-600">Search Results</h2>
         {results.map((result, index) => (

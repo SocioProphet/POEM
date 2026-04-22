@@ -192,10 +192,11 @@ export default function Home() {
         })}
         </div>
       </section>
-      <section className="mx-auto mt-12 mb-12 flex justify-center">
+      <section className="mx-auto mt-12 mb-12 flex flex-col items-center justify-center gap-12">
+          <h2 className="text-3xl text-center mx-auto">Jump into Scales</h2>
         <Link
           to="/scales"
-          className="text-2xl bg-amber-500  text-white px-4 py-2 shadow-lg hover:bg-amber-600 transition duration-300 ease-in-out">
+          className="text-2xl bg-amber-500 text-center text-white px-4 py-2 shadow-lg hover:bg-amber-600 transition duration-300 ease-in-out">
           Scales
         </Link>
       </section> 

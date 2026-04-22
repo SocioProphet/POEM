@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";    
 import InstrumentCard from "../../../components/instrumentCard";
 import { apiFetch } from "../../../api/api";
+import Loading from "../../../components/Loading";
 type Params = {
   id: string;
 };
@@ -9,19 +10,26 @@ export default function InstrumentList() {
 
 const { id } = useParams<Params>();
 const [instruments, setInstruments] = useState([]);
+const [loading, setLoading] = useState<Boolean>(false);
 const getInstrumentsList = async () => { 
     try {
+        setLoading(true);
         const res = await apiFetch(`/instruments/${id}`);
         const data = await res.json();
         setInstruments(data.instruments);
         console.log(data);
     } catch (err) {
         console.error("Fetch failed:", err);
+    }finally{
+        setLoading(false);
     }
 }
 useEffect(() => {
     getInstrumentsList();
 }, [id]);
+if(loading){
+    return <Loading/>
+}
     return (<div>
         <h1 className="text-center text-3xl mt-12 text-slate-600 font-bold">{id?.toUpperCase()} Instruments</h1>
 <div className="mt-12">
