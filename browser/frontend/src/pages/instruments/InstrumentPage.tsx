@@ -50,10 +50,7 @@ export default function InstrumentPage() {
     getInstrumentInfo();
    
   }, [name]);
-  const isReady: boolean =
-  !loading &&
-  instrumentCount !== 0 &&
-  languageCount !== 0;
+
 
 if (loading || !dataloaded) {
   return <Loading />;
