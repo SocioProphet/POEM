@@ -166,22 +166,27 @@ python embeddings/search_similarity.py
 **Script:** `embeddings/test_search_similarity.py`
 
 ```bash
-# Recommended: run directly — prints output to console AND saves to test_results.txt
+# Recommended: run directly — prints to console AND saves to test_results.txt
 python embeddings/test_search_similarity.py
 
-# Or run via pytest directly
+# Or run via pytest
 python -m pytest embeddings/test_search_similarity.py -v
 
-# Unit tests only (no VPN or .npy files needed)
+# Unit tests only — no VPN or .npy files needed
 python -m pytest embeddings/test_search_similarity.py -v -k "TestSimilarityMetrics"
 
-# Integration tests only (requires Steps 3 and VPN access)
+# Function-import integration tests only
 python -m pytest embeddings/test_search_similarity.py -v -k "TestSearchQueries"
+
+# CLI subprocess tests only
+python -m pytest embeddings/test_search_similarity.py -v -k "TestCLISearch"
 ```
 
 Results are saved to `embeddings/test_results.txt` when run directly with `python`.
 
-**Integration tests are automatically skipped** if the `embeddings/instruments/` folder is absent or empty — complete Step 3 first to enable them.
+`TestSearchQueries` and `TestCLISearch` are **automatically skipped** if the `embeddings/instruments/` folder is absent or empty — complete Step 3 first to enable them.
+
+`TestCLISearch` also writes two result files to `embeddings/cli_query_results/` during the run.
 
 ---
 
@@ -304,12 +309,34 @@ Run this before `generate_embeddings.py` whenever the endpoint may have changed 
 
 **Test classes:**
 
-| Class | Count | Requires endpoint | Requires .npy files |
-|-------|-------|-------------------|---------------------|
-| `TestSimilarityMetrics` | 15 | No | No |
-| `TestSearchQueries` | 29 | Yes | Yes |
+| Class | Count | Requires endpoint | Requires .npy files | How it tests |
+|-------|-------|-------------------|---------------------|--------------|
+| `TestSimilarityMetrics` | 15 | No | No | Imports functions directly, uses synthetic numpy vectors |
+| `TestSearchQueries` | 29 | Yes | Yes | Imports functions directly, runs real queries via API |
+| `TestCLISearch` | 48 | Yes | Yes | Calls `search_similarity.py` as a subprocess, exactly like the terminal |
 
-Integration tests are auto-skipped if `embeddings/instruments/` is absent or empty.
+`TestSearchQueries` and `TestCLISearch` are auto-skipped if `embeddings/instruments/` is absent or empty.
+
+Five `TestCLISearch` tests additionally write their output to `embeddings/cli_query_results/`:
+- `instruments_anxiety.txt` — instruments measuring anxiety in children
+- `scales_ocd_sp.txt` — Social Phobia / OCD scale query
+- `symptom_fear_speaking.txt` — fear of public speaking (SNOMED symptom)
+- `teacher_informant.txt` — teacher informant school anxiety query (top-10)
+- `rcads47_full.txt` — RCADS-47 full-scale query (top-10)
+
+`TestCLISearch` query categories:
+- Instrument queries by code/name (5)
+- `--top-k` flag variants (3)
+- Scale queries (3)
+- Collection queries (2)
+- Verbatim item text (3)
+- Edge cases (4)
+- SNOMED symptom-grounded queries from `constructs.ttl` (7)
+- New informant types from `informants.ttl`: Teacher, Therapist, Adult (3)
+- Scale notation queries from `scales.ttl`: SP, SAD, MDD, Clarity, Relationship (5)
+- Clinical use-case queries (6)
+- Multilingual queries inspired by `itemStems.ttl` (2)
+- Write-to-file (5)
 
 ---
 
@@ -328,6 +355,12 @@ embeddings/
 ├── templates.txt                  (default output of generate_text_templates.py)
 ├── templates_official.txt         (curated input used by generate_embeddings.py)
 ├── test_results.txt               (saved output of test_search_similarity.py)
+├── cli_query_results/
+│   ├── instruments_anxiety.txt    (instruments measuring anxiety in children)
+│   ├── scales_ocd_sp.txt          (Social Phobia / OCD scale query)
+│   ├── symptom_fear_speaking.txt  (fear of public speaking — SNOMED symptom)
+│   ├── teacher_informant.txt      (teacher informant school anxiety, top-10)
+│   └── rcads47_full.txt           (RCADS-47 full-scale query, top-10)
 │
 ├── instruments/
 │   ├── texts.npy                  shape (N_inst,)        dtype=object

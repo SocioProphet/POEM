@@ -24,6 +24,7 @@ Run only integration tests:
 import os
 import glob
 import sys
+import subprocess
 
 import numpy as np
 import pytest
@@ -473,6 +474,461 @@ class TestSearchQueries:
         query_vec = embed_query("caregiver attendance therapy")
         scores = manhattan_distance(query_vec, embeddings)
         assert (scores <= 0.0 + 1e-4).all()
+
+
+# ===========================================================================
+# TestCLISearch — subprocess tests that call search_similarity.py as a CLI
+# ===========================================================================
+
+@SKIP_IF_NO_EMBEDDINGS
+class TestCLISearch:
+    """Call search_similarity.py as a real subprocess, exactly as a user would.
+
+    Each test runs the script with a query, prints the full output to the
+    console, and asserts on return code and expected content.
+    Two tests additionally write their output to embeddings/cli_query_results/.
+
+    Run only this class:
+        python -m pytest embeddings/test_search_similarity.py -v -k "TestCLISearch"
+    """
+
+    _SCRIPT = os.path.join(_HERE, "search_similarity.py")
+
+    def _run_cli(self, *args) -> subprocess.CompletedProcess:
+        """Run search_similarity.py as a subprocess with the given arguments."""
+        cmd = [sys.executable, self._SCRIPT] + list(args)
+        return subprocess.run(cmd, capture_output=True, text=True)
+
+    # -----------------------------------------------------------------------
+    # Instrument queries
+    # -----------------------------------------------------------------------
+
+    def test_cli_anxiety_in_children(self):
+        result = self._run_cli("instruments that measure anxiety in children")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "instruments" in result.stdout
+
+    def test_cli_rcads25_youth(self):
+        result = self._run_cli("RCADS-25-Y-EN youth anxiety depression scale")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "RCADS" in result.stdout
+
+    def test_cli_phq9_depression(self):
+        result = self._run_cli("PHQ-9 patient health questionnaire depression")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "PHQ" in result.stdout
+
+    def test_cli_mtt_caregiver(self):
+        result = self._run_cli("MTT-35-CG caregiver therapist relationship")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "MTT" in result.stdout
+
+    def test_cli_gad7(self):
+        result = self._run_cli("GAD-7 generalized anxiety questionnaire")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "GAD" in result.stdout
+
+    # -----------------------------------------------------------------------
+    # --top-k flag
+    # -----------------------------------------------------------------------
+
+    def test_cli_top_k_10(self):
+        result = self._run_cli("caregiver therapy attendance", "--top-k", "10")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Top 10" in result.stdout
+
+    def test_cli_top_k_1(self):
+        result = self._run_cli("RCADS anxiety scale", "--top-k", "1")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Top 1" in result.stdout
+
+    def test_cli_top_k_20(self):
+        result = self._run_cli("Obsessive Compulsive Disorder", "--top-k", "20")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Top 20" in result.stdout
+
+    # -----------------------------------------------------------------------
+    # Scale queries
+    # -----------------------------------------------------------------------
+
+    def test_cli_social_phobia_scale(self):
+        result = self._run_cli("Social Phobia subscale score")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "scales" in result.stdout
+
+    def test_cli_major_depressive_disorder(self):
+        result = self._run_cli("Major Depressive Disorder assessment scale")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "scales" in result.stdout
+
+    def test_cli_total_anxiety_depression(self):
+        result = self._run_cli("total anxiety and depression combined score")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert len(result.stdout) > 0
+
+    # -----------------------------------------------------------------------
+    # Collection queries
+    # -----------------------------------------------------------------------
+
+    def test_cli_rcads_collection(self):
+        result = self._run_cli("RCADS instrument collection set")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "collections" in result.stdout
+
+    def test_cli_mtt_collection(self):
+        result = self._run_cli("MTT questionnaire collection group")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "collections" in result.stdout
+
+    # -----------------------------------------------------------------------
+    # Verbatim item text
+    # -----------------------------------------------------------------------
+
+    def test_cli_item_afraid_crowded_places(self):
+        result = self._run_cli("I feel afraid of being in crowded places")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+
+    def test_cli_item_afraid_talk_in_class(self):
+        result = self._run_cli("Afraid to talk in front of class")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+
+    def test_cli_item_actively_participate(self):
+        result = self._run_cli(
+            "I actively participate during appointments with my child's therapist"
+        )
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+
+    # -----------------------------------------------------------------------
+    # Edge cases
+    # -----------------------------------------------------------------------
+
+    def test_cli_single_word(self):
+        """Single-word query — should still return results without crashing."""
+        result = self._run_cli("anxiety")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert len(result.stdout) > 0
+
+    def test_cli_generic_term(self):
+        """Very generic term — all sections plausible, just check it runs."""
+        result = self._run_cli("questionnaire")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+
+    def test_cli_question_phrasing(self):
+        """Query phrased as a natural-language question."""
+        result = self._run_cli("Which instruments measure panic disorder in children?")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+
+    def test_cli_multi_concept_query(self):
+        """Multiple clinical concepts in one query string."""
+        result = self._run_cli("anxiety depression panic separation caregiver youth")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+
+    # -----------------------------------------------------------------------
+    # Write-to-file tests — output saved to cli_query_results/
+    # -----------------------------------------------------------------------
+
+    def test_cli_write_instruments_anxiety(self):
+        """Run an instrument query and save the full output to a file."""
+        result = self._run_cli("instruments measuring anxiety in children")
+        print(result.stdout)
+        assert result.returncode == 0
+
+        out_dir = os.path.join(_HERE, "cli_query_results")
+        os.makedirs(out_dir, exist_ok=True)
+        out_path = os.path.join(out_dir, "instruments_anxiety.txt")
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(result.stdout)
+        print(f"Results saved to {out_path}")
+        assert os.path.exists(out_path)
+
+    def test_cli_write_scales_ocd_sp(self):
+        """Run a scale query and save the full output to a file."""
+        result = self._run_cli("Social Phobia Obsessive Compulsive Disorder scale")
+        print(result.stdout)
+        assert result.returncode == 0
+
+        out_dir = os.path.join(_HERE, "cli_query_results")
+        os.makedirs(out_dir, exist_ok=True)
+        out_path = os.path.join(out_dir, "scales_ocd_sp.txt")
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(result.stdout)
+        print(f"Results saved to {out_path}")
+        assert os.path.exists(out_path)
+
+    # -----------------------------------------------------------------------
+    # SNOMED symptom-grounded queries (from constructs.ttl)
+    # -----------------------------------------------------------------------
+
+    def test_cli_fear_of_public_speaking(self):
+        """Symptom: fear of public speaking — from snomed:247835002 in constructs.ttl."""
+        result = self._run_cli("fear of public speaking anxiety disorder")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+
+    def test_cli_intrusive_thoughts_ocd(self):
+        """Symptom: intrusive thoughts — from snomed:225445003 in constructs.ttl."""
+        result = self._run_cli("intrusive thoughts obsessive compulsive checking behavior")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+
+    def test_cli_persistent_sadness_anhedonia(self):
+        """Symptoms: persistent sadness + anhedonia — both in constructs.ttl."""
+        result = self._run_cli("persistent sadness anhedonia nothing is fun depressive")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+
+    def test_cli_fear_left_alone_separation(self):
+        """Symptom: fear of being left alone — snomed:225629005 in constructs.ttl."""
+        result = self._run_cli("fear of being left alone separation anxiety children")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "scales" in result.stdout or "instruments" in result.stdout
+
+    def test_cli_sleep_disturbance_fatigue_depression(self):
+        """Symptoms: sleep disturbance + fatigue — both listed in constructs.ttl."""
+        result = self._run_cli("sleep disturbance fatigue depression PHQ questionnaire")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+
+    def test_cli_panic_sudden_fear_heart_racing(self):
+        """Symptom: panic — snomed:79015004 + heart racing item text in itemStems.ttl."""
+        result = self._run_cli("sudden panic no reason heart beats fast out of nowhere")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "instruments" in result.stdout
+
+    def test_cli_fear_appearing_ridiculous(self):
+        """Symptom: fear of appearing ridiculous — snomed:247826009 in constructs.ttl."""
+        result = self._run_cli("worried about looking foolish ridiculous in front of others")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "instruments" in result.stdout
+
+    # -----------------------------------------------------------------------
+    # New informant types (from informants.ttl: Teacher, Therapist, Adult)
+    # -----------------------------------------------------------------------
+
+    def test_cli_teacher_informant(self):
+        """Informant: Teacher — from informants.ttl."""
+        result = self._run_cli("teacher informant school anxiety questionnaire")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+
+    def test_cli_therapist_informant(self):
+        """Informant: Therapist — from informants.ttl."""
+        result = self._run_cli("therapist rated assessment engagement questionnaire")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "instruments" in result.stdout
+
+    def test_cli_adult_informant(self):
+        """Informant: Adult — GAD-7 targets adults per templates_official.txt."""
+        result = self._run_cli("adult self-report anxiety worry questionnaire")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "instruments" in result.stdout
+
+    # -----------------------------------------------------------------------
+    # Scale notation queries (from scales.ttl: SP, SAD, MDD, AnxDep, OCD)
+    # -----------------------------------------------------------------------
+
+    def test_cli_scale_notation_sp(self):
+        """Scale: Social Phobia — notation SP in scales.ttl."""
+        result = self._run_cli("SP Social Phobia subscale notation score")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "scales" in result.stdout
+
+    def test_cli_scale_notation_sad(self):
+        """Scale: Separation Anxiety Disorder — notation SAD in scales.ttl."""
+        result = self._run_cli("SAD Separation Anxiety Disorder subscale score")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "scales" in result.stdout
+
+    def test_cli_scale_notation_mdd(self):
+        """Scale: Major Depressive Disorder — notation MDD in scales.ttl."""
+        result = self._run_cli("MDD Major Depressive Disorder scale score")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "scales" in result.stdout
+
+    def test_cli_scale_clarity(self):
+        """Scale: Clarity (7.1) — MTT scale from scales.ttl."""
+        result = self._run_cli("Clarity scale therapy understanding treatment goals")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+
+    def test_cli_scale_relationship(self):
+        """Scale: Relationship (7.1) — MTT scale from scales.ttl."""
+        result = self._run_cli("Relationship scale therapist alliance bond")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "scales" in result.stdout
+
+    # -----------------------------------------------------------------------
+    # Clinical use-case queries
+    # -----------------------------------------------------------------------
+
+    def test_cli_screening_childhood_anxiety(self):
+        """Clinical use case: screening for anxiety in children."""
+        result = self._run_cli("screening tool childhood anxiety primary care")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "instruments" in result.stdout
+
+    def test_cli_parent_completed_child_anxiety(self):
+        """Clinical use case: parent (caregiver) completing questionnaire about child."""
+        result = self._run_cli("parent completed measure of child anxiety symptoms")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "instruments" in result.stdout
+
+    def test_cli_depressive_symptoms_adults(self):
+        """Clinical use case: depression self-report in adults."""
+        result = self._run_cli("self-report measure for depressive symptoms in adults")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "instruments" in result.stdout
+
+    def test_cli_therapeutic_alliance_engagement(self):
+        """Clinical use case: measuring therapeutic relationship quality."""
+        result = self._run_cli("therapeutic relationship quality engagement alliance scale")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+
+    def test_cli_school_avoidance_worry(self):
+        """Item-based clinical query: school avoidance due to worry."""
+        result = self._run_cli("hard to go to school worried scared bad things will happen")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "instruments" in result.stdout
+
+    def test_cli_compulsive_checking_behavior(self):
+        """Clinical query: compulsive checking — symptom in constructs.ttl."""
+        result = self._run_cli("must check things over and over compulsive checking behavior")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+
+    # -----------------------------------------------------------------------
+    # Multilingual queries (inspired by itemStems.ttl)
+    # -----------------------------------------------------------------------
+
+    def test_cli_german_anxiety_item(self):
+        """German item text from itemStems.ttl — Ich habe Angst."""
+        result = self._run_cli("Ich habe Angst wenn ich eine Arbeit schreiben muss")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "Cosine Similarity" in result.stdout
+        assert "instruments" in result.stdout
+
+    def test_cli_multilingual_translations(self):
+        """Semantic query about multilingual instrument versions."""
+        result = self._run_cli("multilingual translated versions child anxiety questionnaire")
+        print(result.stdout)
+        assert result.returncode == 0
+        assert "instruments" in result.stdout
+
+    # -----------------------------------------------------------------------
+    # Additional write-to-file tests
+    # -----------------------------------------------------------------------
+
+    def test_cli_write_fear_public_speaking(self):
+        """Symptom query saved to file."""
+        result = self._run_cli("fear of public speaking social phobia subscale")
+        print(result.stdout)
+        assert result.returncode == 0
+
+        out_dir = os.path.join(_HERE, "cli_query_results")
+        os.makedirs(out_dir, exist_ok=True)
+        out_path = os.path.join(out_dir, "symptom_fear_speaking.txt")
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(result.stdout)
+        print(f"Results saved to {out_path}")
+        assert os.path.exists(out_path)
+
+    def test_cli_write_teacher_informant(self):
+        """Teacher informant query saved to file."""
+        result = self._run_cli("teacher informant school anxiety questionnaire", "--top-k", "10")
+        print(result.stdout)
+        assert result.returncode == 0
+
+        out_dir = os.path.join(_HERE, "cli_query_results")
+        os.makedirs(out_dir, exist_ok=True)
+        out_path = os.path.join(out_dir, "teacher_informant.txt")
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(result.stdout)
+        print(f"Results saved to {out_path}")
+        assert os.path.exists(out_path)
+
+    def test_cli_write_rcads47_full(self):
+        """RCADS-47 full-scale query saved to file."""
+        result = self._run_cli(
+            "RCADS-47 full anxiety depression scale youth caregiver", "--top-k", "10"
+        )
+        print(result.stdout)
+        assert result.returncode == 0
+
+        out_dir = os.path.join(_HERE, "cli_query_results")
+        os.makedirs(out_dir, exist_ok=True)
+        out_path = os.path.join(out_dir, "rcads47_full.txt")
+        with open(out_path, "w", encoding="utf-8") as f:
+            f.write(result.stdout)
+        print(f"Results saved to {out_path}")
+        assert os.path.exists(out_path)
 
 
 # ---------------------------------------------------------------------------
