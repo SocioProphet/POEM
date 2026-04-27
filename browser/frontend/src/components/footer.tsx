@@ -7,7 +7,7 @@ export default function Footer()
         <h2 className="bold text-2xl">Psychometric Ontology of Experiences and Measures</h2>
         </div>
         <div>
-            <p> Broswer for mental health instruments to make assessment easier for
+            <p> Browser for mental health instruments to make assessment easier for
             researchers and clinicians.</p>
         </div>
         <a href= "https://github.com/tetherless-world/POEM"className="flex"><Github/></a>

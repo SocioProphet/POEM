@@ -17,11 +17,13 @@ instruments: str = "urn:poem:file:instruments.ttl"
 languages: str = "urn:poem:file:languages.ttl"
 items: str = "urn:poem:file:items.ttl"
 informants: str = "urn:poem:file:informants.ttl"
-itemStems:  str = "urn:poem:file:itemStems.ttl"
+itemStems: str = "urn:poem:file:itemStems.ttl"
 itemStemConcepts: str = "urn:poem:file:itemStemConcepts.ttl"
 scale_instruments: str = "urn:poem:file:scalesInstrument.ttl"
 scales: str = "urn:poem:file:scales.ttl"
 components: str = "urn:poem:file:components.ttl"
+
+
 def get_total_instruments(POEM: Dataset, name: str):
     name = Literal(name).n3()
     query = f"""
@@ -36,8 +38,10 @@ def get_total_instruments(POEM: Dataset, name: str):
     """
     res = POEM.query(query)
     for row in res:
-        return int(row['count'])
+        return int(row["count"])
     return 0
+
+
 def get_total_languages(POEM: Dataset, name: str):
     name = Literal(name).n3()
     query = f"""
@@ -54,13 +58,15 @@ def get_total_languages(POEM: Dataset, name: str):
     """
     res = POEM.query(query)
     for row in res:
-        return int(row['count'])
+        return int(row["count"])
     return 0
+
+
 def get_instrument_item_concepts(POEM: Dataset, name: str):
     group = name.split()
     youth = Literal(group[0]).n3()
     caregiver = Literal(group[1]).n3()
-    query1= f"""
+    query1 = f"""
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
     PREFIX sio: <http://semanticscience.org/resource/> 
     SELECT ?r
@@ -82,7 +88,11 @@ def get_instrument_item_concepts(POEM: Dataset, name: str):
         GRAPH <{itemStems}>{{?c rdfs:label ?r}}
     }}
     """
-    return  {"youth": list([row.r for row in POEM.query(query1)]), "caregiver": list([row.r for row in POEM.query(query2)])}
+    return {
+        "youth": list([row.r for row in POEM.query(query1)]),
+        "caregiver": list([row.r for row in POEM.query(query2)]),
+    }
+
 
 def get_scales(POEM: Dataset, name: str):
     name = Literal(name).n3()
@@ -95,8 +105,10 @@ def get_scales(POEM: Dataset, name: str):
         GRAPH <{scale_instruments}> {{ ?su ?p ?o .}}
         GRAPH <{scales}> {{?o rdfs:label ?s .}}
     }}
-    """ 
+    """
     return list([row.s for row in POEM.query(scales_query)])
+
+
 def get_all_instruments_from_family(POEM: Dataset, name: str):
     name = Literal(name.upper()).n3()
     query = f"""
@@ -115,7 +127,19 @@ WHERE {{
     GRAPH <{instruments}> {{?o owl:deprecated 0.}}
     }}
 """
-    return list([{"name": row.label, "lang": row.lang, "informant": row.i, "count": int(row.label.split('-')[1])} for row in POEM.query(query)])
+    return list(
+        [
+            {
+                "name": row.label,
+                "lang": row.lang,
+                "informant": row.i,
+                "count": int(row.label.split("-")[1]),
+            }
+            for row in POEM.query(query)
+        ]
+    )
+
+
 def get_all_scales(POEM: Dataset):
     query = f"""
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -126,6 +150,8 @@ WHERE {{
     }}
 """
     return list([row.label for row in POEM.query(query)])
+
+
 def get_items(POEM: Dataset, name: str):
     name = Literal(name).n3()
     query = f"""    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -139,6 +165,8 @@ def get_items(POEM: Dataset, name: str):
     }}
     """
     return list([row.label for row in POEM.query(query)])
+
+
 def get_instrument(POEM: Dataset, name: str):
     name = Literal(name).n3()
     query = f"""PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -156,6 +184,8 @@ WHERE {{
     for row in res:
         return {"language": row.language, "informant": row.informant}
     return None
+
+
 def get_components(POEM: Dataset, name: str):
     name = Literal(name).n3()
     query = f"""PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -167,6 +197,8 @@ WHERE {{
     GRAPH <{components}> {{?c rdfs:label ?component .}}
     }} """
     return list([row.component for row in POEM.query(query)])
+
+
 def get_instruments_by_scales(POEM: Dataset, scales_list: list[str]):
     scale_names = [Literal(name).n3() for name in scales_list]
     res = {}
@@ -185,22 +217,23 @@ def get_instruments_by_scales(POEM: Dataset, scales_list: list[str]):
         for label in labels:
             if label not in res:
                 res[label] = set()
-            res[label].add(str(scale).strip("\""))
+            res[label].add(str(scale).strip('"'))
     return {label: list(scales) for label, scales in res.items()}
+
 
 def ai_summary(text: str) -> str:
     response = requests.post(
-  url="https://openrouter.ai/api/v1/chat/completions",
-  headers={
-    "Authorization": "Bearer " + OPEN_ROUTER_API_KEY,
-    "Content-Type": "application/json",
-  },
-  data=json.dumps({
-    "model": "stepfun/step-3.5-flash:free",
-    "messages": [
-        {
-          "role": "user",
-          "content": f"""You are analyzing content from the Psychometric Ontology of Experiences and Measures (POEM).
+        url=os.getenv("RPI_LLM_LINK"),
+        headers={
+            "Content-Type": "application/json",
+        },
+        data=json.dumps(
+            {
+                "model": "gpt-oss:latest",
+                "messages": [
+                    {
+                        "role": "user",
+                        "content": f"""You are analyzing content from the Psychometric Ontology of Experiences and Measures (POEM).
 
 POEM models:
 - assessment instruments
@@ -212,32 +245,40 @@ Your task:
 - Identify any instruments or constructs mentioned
 - Explain relationships if present
 - Keep it clear and structured
+- Be concise. Use bullet points only. No explanations, no filler, no repetition.
+- basic text only 
 
 Page Content:
-{text}"""
-        }
-      ],
-    "reasoning": {"enabled": True}
-  })
-)
-# Extract the assistant message with reasoning_details
+{text}""",
+                    }
+                ],
+                "reasoning": {"enabled": True},
+            }
+        ),
+    )
+    # Extract the assistant message with reasoning_details
     response = response.json()
     print(response)
-    if 'choices' not in response:
+    if "choices" not in response:
         return "Summary not available right now try again later"
-    response = response['choices'][0]['message']
-    return response.get('content')
+    response = response["choices"][0]["message"]
+    return response.get("content")
+
+
 def extract_text(html: str) -> str:
     soup = BeautifulSoup(html, "html.parser")
     for tag in soup(["script", "style", "nav", "footer"]):
         tag.decompose()
     text: str = soup.get_text(separator=" ", strip=True)
-    return text[:8000] 
+    return text[:8000]
+
+
 async def fetch_html(url: str) -> str:
     async with httpx.AsyncClient() as client:
         response = await client.get(url)
         return response.text
-    
+
+
 def get_all_instruments(POEM: Dataset):
     query = f"""PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX sio: <http://semanticscience.org/resource/>
@@ -251,7 +292,62 @@ WHERE {{
     for row in res:
         labels.add(str(row.label))
     return labels
-def search_query_small(query: str,buckets):
-    return search(query,buckets, 5)
+
+
+def search_query_small(query: str, buckets):
+    return search(query, buckets, 5)
+
+
 def search_query(query: str, buckets):
     return search(query, buckets, 30)
+
+
+def search_with_filters(
+    POEM: Dataset,
+    scale: str | None,
+    language: str | None,
+    informant: str | None,
+) -> set[str]:
+
+    scale_part = (
+        f"""GRAPH <{scales}> {{ ?s rdfs:label "{scale}" }}
+        GRAPH <{scale_instruments}> {{?i sio:SIO_000008 ?s}}"""
+        if scale else ""
+    )
+
+    language_part = (
+        f'''
+        GRAPH <{languages}> {{ ?l rdfs:label "{language.capitalize()}" }}
+        GRAPH <{instruments}> {{ ?i sio:SIO_000008 ?l }}
+        '''
+        if language else ""
+    )
+
+    informant_part = (
+        f'''
+        GRAPH <{informants}> {{ ?in rdfs:label "{informant.capitalize()}" }}
+        GRAPH <{instruments}> {{ ?i sio:SIO_000008 ?in }}
+        '''
+        if informant else ""
+    )
+
+    query = f"""
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX sio: <http://semanticscience.org/resource/>
+
+    SELECT DISTINCT ?label
+    WHERE {{
+        {scale_part}
+        {language_part}
+        {informant_part}
+        GRAPH <{instruments}> {{ ?i rdfs:label ?label }}
+    }}
+    """
+    print(query)
+    res = POEM.query(query)
+
+    labels: set[str] = set()
+    for row in res:
+        labels.add(str(row.label))
+   
+    return labels

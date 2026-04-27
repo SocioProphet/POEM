@@ -129,7 +129,7 @@ export default function Home() {
             Psychometric Ontology of Experiences and instruments
           </h2>
           <p className="mt-5 text-base md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Broswer for mental health instruments to make assessment easier for
+            Browser for mental health instruments to make assessment easier for
             researchers and clinicians.
           </p>
         </div>
