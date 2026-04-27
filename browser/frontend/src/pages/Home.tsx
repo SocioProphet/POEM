@@ -53,9 +53,6 @@ const instrumentCards: instrumentProps[] = [
   },
 ]; 
 export default function Home() {
-
-    
-  
   async function searchGraphSmall(query: string){
     const q = query.toLowerCase();
     try{
@@ -180,6 +177,9 @@ export default function Home() {
             to="/Glossary"
           >
             Learn More
+          </Link>
+          <Link className="p-3 border border-white transition-all duration-200 hover:bg-slate-600" to="/Filter">
+          Filter Instruments
           </Link>
         </div>
       </section>

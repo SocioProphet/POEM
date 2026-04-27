@@ -24,7 +24,8 @@ from poem.query import (
     extract_text,
     search_query_small,
     search_query,
-    search_with_filters
+    search_with_filters,
+    get_s_l_i
 )
 
 router = APIRouter()
@@ -141,3 +142,6 @@ async def search(query, buckets = Depends(get_buckets)):
 @router.post("/search_filter")
 async def search_filter(req: filterRequest, POEM: Dataset = Depends(get_POEM)):
     return search_with_filters(POEM, req.scale, req.language, req.informant)
+@router.get("/s_l_i")
+async def s_l_i(POEM: Dataset = Depends(get_POEM)):
+    return get_s_l_i(POEM)

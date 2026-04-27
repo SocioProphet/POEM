@@ -150,8 +150,26 @@ WHERE {{
     }}
 """
     return list([row.label for row in POEM.query(query)])
-
-
+def get_all_languages(POEM:Dataset):
+    query = f"""
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sio: <http://semanticscience.org/resource/>
+SELECT DISTINCT ?label
+WHERE {{
+GRAPH <{languages}> {{?l rdfs:label ?label}}
+}}"""
+    return list([row.label for row in POEM.query(query)])
+def get_all_informants(POEM:Dataset):
+    query = f"""
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX sio: <http://semanticscience.org/resource/>
+SELECT DISTINCT ?label
+WHERE {{
+GRAPH <{informants}> {{?i rdfs:label ?label}}
+}}"""
+    return list([row.label for row in POEM.query(query)])
+def get_s_l_i(POEM: Dataset):
+    return {"scales": get_all_scales(POEM), "languages": get_all_languages(POEM), "informants": get_all_informants(POEM)}
 def get_items(POEM: Dataset, name: str):
     name = Literal(name).n3()
     query = f"""    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
