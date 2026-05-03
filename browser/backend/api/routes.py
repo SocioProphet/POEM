@@ -6,7 +6,7 @@ from rdflib import Dataset
 from api.deps import get_POEM, get_buckets
 from pydantic import BaseModel
 import inspect
-from typing import Optional 
+from typing import Optional, Union
 
 from poem.query import (
     get_instrument,
@@ -34,9 +34,9 @@ class Request(BaseModel):
     url: str
     content: str
 class filterRequest(BaseModel):
-    scale: Optional[str]
-    language: Optional[str]
-    informant: Optional[str]
+    scale: Optional[Union[str, list[str]]] = None
+    language: Optional[Union[str, list[str]]] = None
+    informant: Optional[Union[str, list[str]]] = None
 @router.get("/api/debug/graphs")
 def debug_graphs(request: Request):
     ds = request.app.state.POEM

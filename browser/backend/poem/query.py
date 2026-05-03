@@ -322,31 +322,52 @@ def search_query(query: str, buckets):
 
 def search_with_filters(
     POEM: Dataset,
-    scale: str | None,
-    language: str | None,
-    informant: str | None,
-) -> set[str]:
+    scale: str | list[str] | None,
+    language: str | list[str] | None,
+    informant: str | list[str] | None,
+) -> list[str]:
 
-    scale_part = (
-        f"""GRAPH <{scales}> {{ ?s rdfs:label "{scale}" }}
-        GRAPH <{scale_instruments}> {{?i sio:SIO_000008 ?s}}"""
-        if scale else ""
+    def normalize_filter(value: str | list[str] | None) -> list[str]:
+        if value is None:
+            return []
+        if isinstance(value, str):
+            return [value] if value else []
+        return [item for item in value if item]
+
+    scale_values = normalize_filter(scale)
+    language_values = normalize_filter(language)
+    informant_values = normalize_filter(informant)
+
+    scale_part = "\n".join(
+        f"""
+        GRAPH <{scales}> {{ ?scale{index} rdfs:label {Literal(scale_value).n3()} }}
+        GRAPH <{scale_instruments}> {{ ?i sio:SIO_000008 ?scale{index} }}
+        """
+        for index, scale_value in enumerate(scale_values)
     )
 
-    language_part = (
-        f'''
-        GRAPH <{languages}> {{ ?l rdfs:label "{language.capitalize()}" }}
+    language_match = (
+        f"""
+        VALUES ?languageLabel {{ {" ".join(Literal(value).n3() for value in language_values)} }}
+        GRAPH <{languages}> {{ ?l rdfs:label ?languageLabel }}
         GRAPH <{instruments}> {{ ?i sio:SIO_000008 ?l }}
-        '''
-        if language else ""
+        """
+        if language_values else ""
     )
 
-    informant_part = (
-        f'''
-        GRAPH <{informants}> {{ ?in rdfs:label "{informant.capitalize()}" }}
+    informant_match = (
+        f"""
+        VALUES ?informantLabel {{ {" ".join(Literal(value).n3() for value in informant_values)} }}
+        GRAPH <{informants}> {{ ?in rdfs:label ?informantLabel }}
         GRAPH <{instruments}> {{ ?i sio:SIO_000008 ?in }}
-        '''
-        if informant else ""
+        """
+        if informant_values else ""
+    )
+
+    attribute_parts = [part for part in [language_match, informant_match] if part]
+    attribute_part = (
+        " UNION ".join(f"{{ {part} }}" for part in attribute_parts)
+        if len(attribute_parts) > 1 else "".join(attribute_parts)
     )
 
     query = f"""
@@ -356,16 +377,14 @@ def search_with_filters(
     SELECT DISTINCT ?label
     WHERE {{
         {scale_part}
-        {language_part}
-        {informant_part}
+        {attribute_part}
         GRAPH <{instruments}> {{ ?i rdfs:label ?label }}
     }}
     """
-    print(query)
     res = POEM.query(query)
 
     labels: set[str] = set()
     for row in res:
         labels.add(str(row.label))
    
-    return labels
+    return sorted(labels)
