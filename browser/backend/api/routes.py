@@ -6,6 +6,7 @@ from rdflib import Dataset
 from api.deps import get_POEM, get_buckets
 from pydantic import BaseModel
 import inspect
+from typing import Optional, Union
 
 from poem.query import (
     get_instrument,
@@ -22,7 +23,9 @@ from poem.query import (
     fetch_html,
     extract_text,
     search_query_small,
-    search_query
+    search_query,
+    search_with_filters,
+    get_s_l_i
 )
 
 router = APIRouter()
@@ -30,6 +33,10 @@ router = APIRouter()
 class Request(BaseModel):
     url: str
     content: str
+class filterRequest(BaseModel):
+    scale: Optional[Union[str, list[str]]] = None
+    language: Optional[Union[str, list[str]]] = None
+    informant: Optional[Union[str, list[str]]] = None
 @router.get("/api/debug/graphs")
 def debug_graphs(request: Request):
     ds = request.app.state.POEM
@@ -132,3 +139,9 @@ async def search_small(query, buckets = Depends(get_buckets)):
 async def search(query, buckets = Depends(get_buckets)):
     results = search_query(query, buckets)
     return results
+@router.post("/search_filter")
+async def search_filter(req: filterRequest, POEM: Dataset = Depends(get_POEM)):
+    return search_with_filters(POEM, req.scale, req.language, req.informant)
+@router.get("/s_l_i")
+async def s_l_i(POEM: Dataset = Depends(get_POEM)):
+    return get_s_l_i(POEM)
