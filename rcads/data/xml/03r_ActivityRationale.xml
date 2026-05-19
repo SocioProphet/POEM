@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="03r_ActivityRationale.xsd" generated="2026-05-19T15:13:28">
+<_x0030_3r_ActivityRationale>
+<RationaleID>1</RationaleID>
+<RationaleType>Fix</RationaleType>
+<RationaleTypeDescription>Fixing mistake found in previous version</RationaleTypeDescription>
+</_x0030_3r_ActivityRationale>
+<_x0030_3r_ActivityRationale>
+<RationaleID>2</RationaleID>
+<RationaleType>Adapt</RationaleType>
+<RationaleTypeDescription>Adapting to new context (not language or country)</RationaleTypeDescription>
+</_x0030_3r_ActivityRationale>
+<_x0030_3r_ActivityRationale>
+<RationaleID>3</RationaleID>
+<RationaleType>None</RationaleType>
+<RationaleTypeDescription>None found</RationaleTypeDescription>
+</_x0030_3r_ActivityRationale>
+</dataroot>

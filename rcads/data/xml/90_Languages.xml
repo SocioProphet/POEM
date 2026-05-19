@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="90_Languages.xsd" generated="2026-02-26T10:32:03">
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="90_Languages.xsd" generated="2026-05-19T15:16:29">
 <_x0039_0_Languages>
 <LanguageID>1</LanguageID>
 <Language>English</Language>
 <ISO639-1>EN</ISO639-1>
 <ISO639-2>ENG</ISO639-2>
-<ISO_x0020_3166_x0020_Country_x0020_Code>US</ISO_x0020_3166_x0020_Country_x0020_Code>
 <LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>English</LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>
 </_x0039_0_Languages>
 <_x0039_0_Languages>
@@ -28,7 +27,6 @@
 <Language>Danish</Language>
 <ISO639-1>DA</ISO639-1>
 <ISO639-2>DAN</ISO639-2>
-<ISO_x0020_3166_x0020_Country_x0020_Code>DK</ISO_x0020_3166_x0020_Country_x0020_Code>
 <LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>Dansk</LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>
 </_x0039_0_Languages>
 <_x0039_0_Languages>
@@ -36,7 +34,6 @@
 <Language>Dutch</Language>
 <ISO639-1>NL</ISO639-1>
 <ISO639-2>DUT</ISO639-2>
-<ISO_x0020_3166_x0020_Country_x0020_Code>NL</ISO_x0020_3166_x0020_Country_x0020_Code>
 <LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>Nederlands</LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>
 </_x0039_0_Languages>
 <_x0039_0_Languages>
@@ -58,7 +55,6 @@
 <Language>French</Language>
 <ISO639-1>FR</ISO639-1>
 <ISO639-2>FRE</ISO639-2>
-<ISO_x0020_3166_x0020_Country_x0020_Code>FR</ISO_x0020_3166_x0020_Country_x0020_Code>
 <LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>Français</LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>
 </_x0039_0_Languages>
 <_x0039_0_Languages>
@@ -66,7 +62,6 @@
 <Language>German</Language>
 <ISO639-1>DE</ISO639-1>
 <ISO639-2>GER</ISO639-2>
-<ISO_x0020_3166_x0020_Country_x0020_Code>DE</ISO_x0020_3166_x0020_Country_x0020_Code>
 <LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>Deutsch</LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>
 </_x0039_0_Languages>
 <_x0039_0_Languages>
@@ -96,7 +91,6 @@
 <Language>Japanese</Language>
 <ISO639-1>JA</ISO639-1>
 <ISO639-2>JPN</ISO639-2>
-<ISO_x0020_3166_x0020_Country_x0020_Code>JP</ISO_x0020_3166_x0020_Country_x0020_Code>
 <LanguageinLanguage>日本語</LanguageinLanguage>
 <LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>Nihongo</LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>
 </_x0039_0_Languages>
@@ -140,7 +134,6 @@
 <Language>Portuguese</Language>
 <ISO639-1>PT</ISO639-1>
 <ISO639-2>POR</ISO639-2>
-<ISO_x0020_3166_x0020_Country_x0020_Code>BR</ISO_x0020_3166_x0020_Country_x0020_Code>
 <LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>Português</LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>
 </_x0039_0_Languages>
 <_x0039_0_Languages>
@@ -218,10 +211,6 @@
 </_x0039_0_Languages>
 <_x0039_0_Languages>
 <LanguageID>30</LanguageID>
-<Language>French</Language>
-<ISO639-1>FR</ISO639-1>
-<ISO639-2>FRE</ISO639-2>
-<ISO_x0020_3166_x0020_Country_x0020_Code>CA</ISO_x0020_3166_x0020_Country_x0020_Code>
 <LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>Français</LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>
 </_x0039_0_Languages>
 <_x0039_0_Languages>
@@ -307,5 +296,15 @@
 <ISO639-1>ZU</ISO639-1>
 <ISO639-2>ZUL</ISO639-2>
 <LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>isiZulu</LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>
+</_x0039_0_Languages>
+<_x0039_0_Languages>
+<LanguageID>42</LanguageID>
+<Language>Albanian</Language>
+<ISO639-1>SQ</ISO639-1>
+<ISO639-2>SQI</ISO639-2>
+<LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>Shqip</LanguageinLanguage_x0020__x0028_Latin_x0020_letters_x0029_>
+</_x0039_0_Languages>
+<_x0039_0_Languages>
+<LanguageID>43</LanguageID>
 </_x0039_0_Languages>
 </dataroot>

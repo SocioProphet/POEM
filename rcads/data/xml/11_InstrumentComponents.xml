@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="11_InstrumentComponents.xsd" generated="2026-02-26T10:30:25">
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="11_InstrumentComponents.xsd" generated="2026-05-19T15:14:08">
 <_x0031_1_InstrumentComponents>
 <InstrumentComponentID>3</InstrumentComponentID>
 <InstrumentID>1</InstrumentID>
@@ -3120,18 +3120,21 @@ Her Zaman doğru ise </ComponentValue>
 <InstrumentID>106</InstrumentID>
 <ComponentType>4</ComponentType>
 <ComponentValue>Over the last 2 weeks, how often have you been bothered by any of the following problems?</ComponentValue>
+<ComponentPosition_FHIR>3</ComponentPosition_FHIR>
 </_x0031_1_InstrumentComponents>
 <_x0031_1_InstrumentComponents>
 <InstrumentComponentID>461</InstrumentComponentID>
 <InstrumentID>106</InstrumentID>
 <ComponentType>1</ComponentType>
 <ComponentValue>ID#:</ComponentValue>
+<ComponentPosition_FHIR>1</ComponentPosition_FHIR>
 </_x0031_1_InstrumentComponents>
 <_x0031_1_InstrumentComponents>
 <InstrumentComponentID>462</InstrumentComponentID>
 <InstrumentID>106</InstrumentID>
 <ComponentType>2</ComponentType>
 <ComponentValue>DATE:</ComponentValue>
+<ComponentPosition_FHIR>2</ComponentPosition_FHIR>
 </_x0031_1_InstrumentComponents>
 <_x0031_1_InstrumentComponents>
 <InstrumentComponentID>463</InstrumentComponentID>
@@ -4526,5 +4529,348 @@ Onyesha kadi ya kurekodi majibu, eleza maana ya kila laini/mstari. Rekodi nambar
 <ComponentType>4</ComponentType>
 <ComponentValue>নির্দেশনা: নিচের পদ/বাক্যগুলো পড়ে এগুলোর আপনার ক্ষেত্রে কতটুকু ঘন ঘন ঘটে তা নির্দেশ করুন (✓ চিহ্ন দিন)। আপনার উত্তরগুলো সঠিক না ভুল তা নিয়ে চিন্তা করার প্রয়োজন নেই।</ComponentValue>
 <ComponentPosition_FHIR>3</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>670</InstrumentComponentID>
+<InstrumentID>122</InstrumentID>
+<ComponentType>2</ComponentType>
+<ComponentValue>তারিখঃ</ComponentValue>
+<ComponentPosition_FHIR>2</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>671</InstrumentComponentID>
+<InstrumentID>122</InstrumentID>
+<ComponentType>1</ComponentType>
+<ComponentValue>নামঃ</ComponentValue>
+<ComponentPosition_FHIR>1</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>672</InstrumentComponentID>
+<InstrumentID>122</InstrumentID>
+<ComponentType>4</ComponentType>
+<ComponentValue>নির্দেশনা: নিচের পদ/বাক্যগুলো পড়ে এগুলোর আপনার ক্ষেত্রে কতটুকু ঘন ঘন ঘটে তা নির্দেশ করুন (✓ চিহ্ন দিন)। আপনার উত্তরগুলো সঠিক না ভুল তা নিয়ে চিন্তা করার প্রয়োজন নেই।</ComponentValue>
+<ComponentPosition_FHIR>3</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>673</InstrumentComponentID>
+<InstrumentID>116</InstrumentID>
+<ComponentType>2</ComponentType>
+<ComponentValue>日期</ComponentValue>
+<ComponentPosition_FHIR>2</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>674</InstrumentComponentID>
+<InstrumentID>116</InstrumentID>
+<ComponentType>1</ComponentType>
+<ComponentValue>姓名/编號</ComponentValue>
+<ComponentPosition_FHIR>1</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>675</InstrumentComponentID>
+<InstrumentID>116</InstrumentID>
+<ComponentType>4</ComponentType>
+<ComponentValue>指示: 以下是一些有關兒童及青少年的描述。請根據你的情況, 圈出一個能夠反映到每件事發 生在你身上的答案。答案是沒有對與錯之分。</ComponentValue>
+<ComponentPosition_FHIR>3</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>676</InstrumentComponentID>
+<InstrumentID>118</InstrumentID>
+<ComponentType>2</ComponentType>
+<ComponentValue>日期</ComponentValue>
+<ComponentPosition_FHIR>2</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>677</InstrumentComponentID>
+<InstrumentID>118</InstrumentID>
+<ComponentType>1</ComponentType>
+<ComponentValue>姓名/编號</ComponentValue>
+<ComponentPosition_FHIR>1</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>678</InstrumentComponentID>
+<InstrumentID>118</InstrumentID>
+<ComponentType>4</ComponentType>
+<ComponentValue>指示: 以下是一些有關兒童及青少年的描述。請根據你的情況, 圈出一個能夠反映到每件事發生在你身 上的答案。答案是沒有對與錯之分。</ComponentValue>
+<ComponentPosition_FHIR>3</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>679</InstrumentComponentID>
+<InstrumentID>126</InstrumentID>
+<ComponentType>4</ComponentType>
+<ComponentValue>Sila bulatkan perkataan yang menunjukkan kekerapan perkara-perkara berikut berlaku kepada anda. Tiada jawapan yang betul atau salah.</ComponentValue>
+<ComponentPosition_FHIR>3</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>680</InstrumentComponentID>
+<InstrumentID>177</InstrumentID>
+<ComponentType>3</ComponentType>
+<ComponentValue>Faqa</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>681</InstrumentComponentID>
+<InstrumentID>177</InstrumentID>
+<ComponentType>4</ComponentType>
+<ComponentValue>Ju lutem qarkoni fjalën që përshkruan sa shpesh ju ndodhin këto gjëra. Nuk ka përgjigje të sakta ose të gabuara.</ComponentValue>
+<ComponentPosition_FHIR>3</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>707</InstrumentComponentID>
+<InstrumentID>184</InstrumentID>
+<ComponentType>4</ComponentType>
+<ComponentValue>Over the previous 2 weeks, how often have you been bothered by any of the following problems?</ComponentValue>
+<ComponentPosition_FHIR>1</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>708</InstrumentComponentID>
+<InstrumentID>182</InstrumentID>
+<ComponentType>7</ComponentType>
+<ComponentValue>(Use “✔” to indicate your answer)</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>709</InstrumentComponentID>
+<InstrumentID>184</InstrumentID>
+<ComponentType>7</ComponentType>
+<ComponentValue>(Use “✔” to indicate your answer)</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>710</InstrumentComponentID>
+<InstrumentID>183</InstrumentID>
+<ComponentType>7</ComponentType>
+<ComponentValue>(Use “✔” to indicate your answer)</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>711</InstrumentComponentID>
+<InstrumentID>106</InstrumentID>
+<ComponentType>7</ComponentType>
+<ComponentValue>(Use “✔” to indicate your answer)</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>712</InstrumentComponentID>
+<InstrumentID>185</InstrumentID>
+<ComponentType>4</ComponentType>
+<ComponentValue>Over the previous 2 weeks, how often have you been bothered by any of the following problems?</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>713</InstrumentComponentID>
+<InstrumentID>185</InstrumentID>
+<ComponentType>7</ComponentType>
+<ComponentValue>(Use “✔” to indicate your answer)</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>714</InstrumentComponentID>
+<InstrumentID>186</InstrumentID>
+<ComponentType>4</ComponentType>
+<ComponentValue>Over the last 2 weeks, how often have you been bothered by any of the following problems?</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>715</InstrumentComponentID>
+<InstrumentID>186</InstrumentID>
+<ComponentType>7</ComponentType>
+<ComponentValue>(Use “✔” to indicate your answer)</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>716</InstrumentComponentID>
+<InstrumentID>187</InstrumentID>
+<ComponentType>4</ComponentType>
+<ComponentValue>Over the last 2 weeks, how often have you been bothered by any of the following problems?</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>717</InstrumentComponentID>
+<InstrumentID>187</InstrumentID>
+<ComponentType>7</ComponentType>
+<ComponentValue>(Use “✔” to indicate your answer)</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>718</InstrumentComponentID>
+<InstrumentID>188</InstrumentID>
+<ComponentType>4</ComponentType>
+<ComponentValue>Au cours des 2 dernières semaines, selon quelle fréquence avez-vous été gêné(e) par les problèmes suivants ?</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>719</InstrumentComponentID>
+<InstrumentID>188</InstrumentID>
+<ComponentType>7</ComponentType>
+<ComponentValue>(Veuillez cocher (✔) votre réponse)</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>682</InstrumentComponentID>
+<InstrumentID>177</InstrumentID>
+<ComponentType>1</ComponentType>
+<ComponentValue>Emri/ID:</ComponentValue>
+<ComponentPosition_FHIR>1</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>683</InstrumentComponentID>
+<InstrumentID>177</InstrumentID>
+<ComponentType>2</ComponentType>
+<ComponentValue>Data:</ComponentValue>
+<ComponentPosition_FHIR>2</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>684</InstrumentComponentID>
+<InstrumentID>177</InstrumentID>
+<ComponentType>5</ComponentType>
+<ComponentValue>Ju lutem zgjidhni fjalën që përshkruan sa shpesh ju ndodhin këto gjëra. Nuk ka përgjigje të sakta ose të gabuara.</ComponentValue>
+<ComponentPosition_FHIR>3</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>685</InstrumentComponentID>
+<InstrumentID>178</InstrumentID>
+<ComponentType>1</ComponentType>
+<ComponentValue>Emri/ID:</ComponentValue>
+<ComponentPosition_FHIR>1</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>686</InstrumentComponentID>
+<InstrumentID>178</InstrumentID>
+<ComponentType>2</ComponentType>
+<ComponentValue>Data:</ComponentValue>
+<ComponentPosition_FHIR>2</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>687</InstrumentComponentID>
+<InstrumentID>178</InstrumentID>
+<ComponentType>6</ComponentType>
+<ComponentValue>Marrëdhënia me fëmijën:</ComponentValue>
+<ComponentPosition_FHIR>3</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>688</InstrumentComponentID>
+<InstrumentID>178</InstrumentID>
+<ComponentType>4</ComponentType>
+<ComponentValue>Ju lutem qarkoni fjalën që përshkruan sa shpesh i ndodhin fëmijës suaj këto gjëra.</ComponentValue>
+<ComponentPosition_FHIR>4</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>689</InstrumentComponentID>
+<InstrumentID>178</InstrumentID>
+<ComponentType>5</ComponentType>
+<ComponentValue>Ju lutem zgjidhni fjalën që përshkruan sa shpesh i ndodhin fëmijës suaj këto gjëra.</ComponentValue>
+<ComponentPosition_FHIR>4</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>690</InstrumentComponentID>
+<InstrumentID>178</InstrumentID>
+<ComponentType>3</ComponentType>
+<ComponentValue>Faqa</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>691</InstrumentComponentID>
+<InstrumentID>179</InstrumentID>
+<ComponentType>1</ComponentType>
+<ComponentValue>Emri/ID:</ComponentValue>
+<ComponentPosition_FHIR>1</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>692</InstrumentComponentID>
+<InstrumentID>179</InstrumentID>
+<ComponentType>2</ComponentType>
+<ComponentValue>Data:</ComponentValue>
+<ComponentPosition_FHIR>2</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>693</InstrumentComponentID>
+<InstrumentID>179</InstrumentID>
+<ComponentType>4</ComponentType>
+<ComponentValue>Ju lutem qarkoni fjalën që përshkruan sa shpesh ju ndodhin këto gjëra. Nuk ka përgjigje të sakta ose të gabuara.</ComponentValue>
+<ComponentPosition_FHIR>3</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>694</InstrumentComponentID>
+<InstrumentID>179</InstrumentID>
+<ComponentType>5</ComponentType>
+<ComponentValue>Ju lutem zgjidhni fjalën që përshkruan sa shpesh ju ndodhin këto gjëra. Nuk ka përgjigje të sakta ose të gabuara.</ComponentValue>
+<ComponentPosition_FHIR>3</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>695</InstrumentComponentID>
+<InstrumentID>179</InstrumentID>
+<ComponentType>3</ComponentType>
+<ComponentValue>Faqa</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>696</InstrumentComponentID>
+<InstrumentID>180</InstrumentID>
+<ComponentType>3</ComponentType>
+<ComponentValue>Faqa</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>697</InstrumentComponentID>
+<InstrumentID>180</InstrumentID>
+<ComponentType>1</ComponentType>
+<ComponentValue>Emri/ID:</ComponentValue>
+<ComponentPosition_FHIR>1</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>698</InstrumentComponentID>
+<InstrumentID>180</InstrumentID>
+<ComponentType>2</ComponentType>
+<ComponentValue>Data:</ComponentValue>
+<ComponentPosition_FHIR>2</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>699</InstrumentComponentID>
+<InstrumentID>180</InstrumentID>
+<ComponentType>6</ComponentType>
+<ComponentValue>Marrëdhënia me fëmijën:</ComponentValue>
+<ComponentPosition_FHIR>3</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>700</InstrumentComponentID>
+<InstrumentID>180</InstrumentID>
+<ComponentType>4</ComponentType>
+<ComponentValue>Ju lutem qarkoni fjalën që përshkruan sa shpesh i ndodhin fëmijës suaj këto gjëra.</ComponentValue>
+<ComponentPosition_FHIR>4</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>701</InstrumentComponentID>
+<InstrumentID>180</InstrumentID>
+<ComponentType>5</ComponentType>
+<ComponentValue>Ju lutem zgjidhni fjalën që përshkruan sa shpesh i ndodhin fëmijës suaj këto gjëra.</ComponentValue>
+<ComponentPosition_FHIR>4</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>703</InstrumentComponentID>
+<InstrumentID>181</InstrumentID>
+<ComponentType>4</ComponentType>
+<ComponentValue>Over the last 2 weeks, how often have you been bothered by any of the following problems?</ComponentValue>
+<ComponentPosition_FHIR>1</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>704</InstrumentComponentID>
+<InstrumentID>182</InstrumentID>
+<ComponentType>4</ComponentType>
+<ComponentValue>Over the last 2 weeks , how often have you been bothered by any of the following problems?</ComponentValue>
+<ComponentPosition_FHIR>1</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>705</InstrumentComponentID>
+<InstrumentID>182</InstrumentID>
+<ComponentType>7</ComponentType>
+<ComponentValue>(Use “✔” to indicate your answer)</ComponentValue>
+<ComponentPosition_FHIR>0</ComponentPosition_FHIR>
+</_x0031_1_InstrumentComponents>
+<_x0031_1_InstrumentComponents>
+<InstrumentComponentID>706</InstrumentComponentID>
+<InstrumentID>183</InstrumentID>
+<ComponentType>4</ComponentType>
+<ComponentValue>Over the last 2 weeks, how often have you been bothered by any of the following problems?</ComponentValue>
+<ComponentPosition_FHIR>1</ComponentPosition_FHIR>
 </_x0031_1_InstrumentComponents>
 </dataroot>

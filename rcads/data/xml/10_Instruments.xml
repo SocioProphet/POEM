@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="10_Instruments.xsd" generated="2026-02-26T10:30:16">
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="10_Instruments.xsd" generated="2026-05-19T15:13:58">
 <_x0031_0_Instruments>
 <InstrumentID>1</InstrumentID>
 <InstrumentName>RCADS-47-Y-EN</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>1</Language>
+<Country>1</Country>
 <Informant>1</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>1</Authorized>
@@ -16,6 +17,7 @@
 <InstrumentName>RCADS-47-CG-EN</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>1</Language>
+<Country>1</Country>
 <Informant>2</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>1</Authorized>
@@ -27,6 +29,7 @@
 <InstrumentName>RCADS-25-Y-EN</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>1</Language>
+<Country>1</Country>
 <Informant>1</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>1</Authorized>
@@ -38,6 +41,7 @@
 <InstrumentName>RCADS-25-CG-EN</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>1</Language>
+<Country>1</Country>
 <Informant>2</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>1</Authorized>
@@ -49,6 +53,7 @@
 <InstrumentName>RCADS-47-Y-DE</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>9</Language>
+<Country>5</Country>
 <Informant>1</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>1</Authorized>
@@ -60,6 +65,7 @@
 <InstrumentName>RCADS-47-CG-DE</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>9</Language>
+<Country>5</Country>
 <Informant>2</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>1</Authorized>
@@ -71,6 +77,7 @@
 <InstrumentName>RCADS-25-Y-DE</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>9</Language>
+<Country>5</Country>
 <Informant>1</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>1</Authorized>
@@ -82,6 +89,7 @@
 <InstrumentName>RCADS-25-CG-DE</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>9</Language>
+<Country>5</Country>
 <Informant>2</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>1</Authorized>
@@ -93,6 +101,7 @@
 <InstrumentName>RCADS-47-Y-DA</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>4</Language>
+<Country>2</Country>
 <Informant>1</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>1</Authorized>
@@ -104,6 +113,7 @@
 <InstrumentName>RCADS-47-CG-DA</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>4</Language>
+<Country>2</Country>
 <Informant>2</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>1</Authorized>
@@ -115,6 +125,7 @@
 <InstrumentName>RCADS-25-Y-DA</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>4</Language>
+<Country>2</Country>
 <Informant>1</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>1</Authorized>
@@ -126,6 +137,7 @@
 <InstrumentName>RCADS-25-CG-DA</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>4</Language>
+<Country>2</Country>
 <Informant>2</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>1</Authorized>
@@ -137,8 +149,9 @@
 <InstrumentName>RCADS-47-Y-FR-FR-1</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>8</Language>
+<Country>4</Country>
 <Informant>1</Informant>
-<Annotation>OG Bouvard version</Annotation>
+<Annotation>OG Bouvard version - has empirical study validating this version</Annotation>
 <Deprecated>0</Deprecated>
 <Authorized>0</Authorized>
 <ReadRighttoLeft>0</ReadRighttoLeft>
@@ -148,7 +161,8 @@
 <InstrumentID>14</InstrumentID>
 <InstrumentName>RCADS-47-CG-FR-CA-1</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
-<Language>30</Language>
+<Language>8</Language>
+<Country>8</Country>
 <Informant>2</Informant>
 <Annotation>Chantal Caron et al 2018</Annotation>
 <Deprecated>1</Deprecated>
@@ -161,6 +175,7 @@
 <InstrumentName>RCADS-25-Y-FR-FR-1</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>8</Language>
+<Country>4</Country>
 <Informant>1</Informant>
 <Annotation>RCADS team generated</Annotation>
 <Deprecated>0</Deprecated>
@@ -173,6 +188,7 @@
 <InstrumentName>RCADS-25-CG-FR-FR-1</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>8</Language>
+<Country>4</Country>
 <Informant>2</Informant>
 <Annotation>No items; Based on Boustani update of France French version</Annotation>
 <Deprecated>1</Deprecated>
@@ -317,6 +333,7 @@
 <InstrumentName>RCADS-47-Y-NL</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>5</Language>
+<Country>3</Country>
 <Informant>1</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>0</Authorized>
@@ -328,6 +345,7 @@
 <InstrumentName>RCADS-47-CG-NL</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>5</Language>
+<Country>3</Country>
 <Informant>2</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>0</Authorized>
@@ -339,6 +357,7 @@
 <InstrumentName>RCADS-25-Y-NL</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>5</Language>
+<Country>3</Country>
 <Informant>1</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>0</Authorized>
@@ -350,6 +369,7 @@
 <InstrumentName>RCADS-25-CG-NL</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>5</Language>
+<Country>3</Country>
 <Informant>2</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>0</Authorized>
@@ -847,6 +867,7 @@
 <InstrumentName>RCADS-47-Y-PT-BR</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>19</Language>
+<Country>7</Country>
 <Informant>1</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>0</Authorized>
@@ -870,6 +891,7 @@
 <InstrumentName>RCADS-25-Y-PT-BR</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>19</Language>
+<Country>7</Country>
 <Informant>1</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>0</Authorized>
@@ -1169,9 +1191,10 @@
 </_x0031_0_Instruments>
 <_x0031_0_Instruments>
 <InstrumentID>106</InstrumentID>
-<InstrumentName>PHQ-9-A-EN</InstrumentName>
+<InstrumentName>PHQ-9-A-EN-UK</InstrumentName>
 <InstrumentFamily>4</InstrumentFamily>
 <Language>1</Language>
+<Country>9</Country>
 <Informant>4</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>0</Authorized>
@@ -1608,7 +1631,7 @@
 <InstrumentFamily>1</InstrumentFamily>
 <Language>8</Language>
 <Informant>2</Informant>
-<Annotation>Dayer 2023</Annotation>
+<Annotation>Dayer 2023 - unknown if canadian or france french- google team?</Annotation>
 <Deprecated>1</Deprecated>
 <Authorized>0</Authorized>
 <ReadRighttoLeft>0</ReadRighttoLeft>
@@ -1675,7 +1698,8 @@
 <InstrumentID>150</InstrumentID>
 <InstrumentName>RCADS-25-Y-FR-CA-1</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
-<Language>30</Language>
+<Language>8</Language>
+<Country>8</Country>
 <Informant>1</Informant>
 <Annotation>2022</Annotation>
 <Deprecated>1</Deprecated>
@@ -1685,9 +1709,10 @@
 </_x0031_0_Instruments>
 <_x0031_0_Instruments>
 <InstrumentID>151</InstrumentID>
-<InstrumentName>RCADS-47-CG-FR-3</InstrumentName>
+<InstrumentName>RCADS-47-CG-FR-FR-3</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
 <Language>8</Language>
+<Country>4</Country>
 <Informant>2</Informant>
 <Annotation>Boustani update, combined versions 1 and 2 while consulting youth version 1</Annotation>
 <Deprecated>1</Deprecated>
@@ -1699,7 +1724,8 @@
 <InstrumentID>152</InstrumentID>
 <InstrumentName>RCADS-25-Y-FR-CA-2</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
-<Language>30</Language>
+<Language>8</Language>
+<Country>8</Country>
 <Informant>1</Informant>
 <Annotation>No items; Unauthorized Canadian changes</Annotation>
 <Deprecated>1</Deprecated>
@@ -1711,7 +1737,8 @@
 <InstrumentID>153</InstrumentID>
 <InstrumentName>RCADS-25-CG-FR-CA-1</InstrumentName>
 <InstrumentFamily>1</InstrumentFamily>
-<Language>30</Language>
+<Language>8</Language>
+<Country>8</Country>
 <Informant>2</Informant>
 <Annotation>2022</Annotation>
 <Deprecated>1</Deprecated>
@@ -1970,6 +1997,145 @@
 <Informant>1</Informant>
 <Deprecated>0</Deprecated>
 <Authorized>1</Authorized>
+<ReadRighttoLeft>0</ReadRighttoLeft>
+<Unavailable_x0028_NotGenerated_x0029_>0</Unavailable_x0028_NotGenerated_x0029_>
+</_x0031_0_Instruments>
+<_x0031_0_Instruments>
+<InstrumentID>177</InstrumentID>
+<InstrumentName>RCADS-47-Y-SQ</InstrumentName>
+<InstrumentFamily>1</InstrumentFamily>
+<Language>42</Language>
+<Informant>1</Informant>
+<Deprecated>0</Deprecated>
+<Authorized>1</Authorized>
+<ReadRighttoLeft>0</ReadRighttoLeft>
+<Unavailable_x0028_NotGenerated_x0029_>0</Unavailable_x0028_NotGenerated_x0029_>
+</_x0031_0_Instruments>
+<_x0031_0_Instruments>
+<InstrumentID>178</InstrumentID>
+<InstrumentName>RCADS-47-CG-SQ</InstrumentName>
+<InstrumentFamily>1</InstrumentFamily>
+<Language>42</Language>
+<Informant>2</Informant>
+<Deprecated>0</Deprecated>
+<Authorized>1</Authorized>
+<ReadRighttoLeft>0</ReadRighttoLeft>
+<Unavailable_x0028_NotGenerated_x0029_>0</Unavailable_x0028_NotGenerated_x0029_>
+</_x0031_0_Instruments>
+<_x0031_0_Instruments>
+<InstrumentID>179</InstrumentID>
+<InstrumentName>RCADS-25-Y-SQ</InstrumentName>
+<InstrumentFamily>1</InstrumentFamily>
+<Language>42</Language>
+<Informant>1</Informant>
+<Deprecated>0</Deprecated>
+<Authorized>1</Authorized>
+<ReadRighttoLeft>0</ReadRighttoLeft>
+<Unavailable_x0028_NotGenerated_x0029_>0</Unavailable_x0028_NotGenerated_x0029_>
+</_x0031_0_Instruments>
+<_x0031_0_Instruments>
+<InstrumentID>180</InstrumentID>
+<InstrumentName>RCADS-25-CG-SQ</InstrumentName>
+<InstrumentFamily>1</InstrumentFamily>
+<Language>42</Language>
+<Informant>2</Informant>
+<Deprecated>0</Deprecated>
+<Authorized>1</Authorized>
+<ReadRighttoLeft>0</ReadRighttoLeft>
+<Unavailable_x0028_NotGenerated_x0029_>0</Unavailable_x0028_NotGenerated_x0029_>
+</_x0031_0_Instruments>
+<_x0031_0_Instruments>
+<InstrumentID>181</InstrumentID>
+<InstrumentName>PHQ-9-A-EN-US</InstrumentName>
+<InstrumentFamily>4</InstrumentFamily>
+<Language>1</Language>
+<Country>1</Country>
+<Informant>4</Informant>
+<Deprecated>0</Deprecated>
+<Authorized>0</Authorized>
+<ReadRighttoLeft>0</ReadRighttoLeft>
+<Unavailable_x0028_NotGenerated_x0029_>0</Unavailable_x0028_NotGenerated_x0029_>
+</_x0031_0_Instruments>
+<_x0031_0_Instruments>
+<InstrumentID>182</InstrumentID>
+<InstrumentName>PHQ-8-A-EN-UK</InstrumentName>
+<InstrumentFamily>4</InstrumentFamily>
+<Language>1</Language>
+<Country>9</Country>
+<Informant>4</Informant>
+<Deprecated>0</Deprecated>
+<Authorized>0</Authorized>
+<ReadRighttoLeft>0</ReadRighttoLeft>
+<Unavailable_x0028_NotGenerated_x0029_>0</Unavailable_x0028_NotGenerated_x0029_>
+</_x0031_0_Instruments>
+<_x0031_0_Instruments>
+<InstrumentID>183</InstrumentID>
+<InstrumentName>PHQ-8-A-EN-CA</InstrumentName>
+<InstrumentFamily>4</InstrumentFamily>
+<Language>1</Language>
+<Country>8</Country>
+<Informant>4</Informant>
+<Deprecated>0</Deprecated>
+<Authorized>0</Authorized>
+<ReadRighttoLeft>0</ReadRighttoLeft>
+<Unavailable_x0028_NotGenerated_x0029_>0</Unavailable_x0028_NotGenerated_x0029_>
+</_x0031_0_Instruments>
+<_x0031_0_Instruments>
+<InstrumentID>184</InstrumentID>
+<InstrumentName>PHQ-8-A-EN-AU</InstrumentName>
+<InstrumentFamily>4</InstrumentFamily>
+<Language>1</Language>
+<Country>10</Country>
+<Informant>4</Informant>
+<Deprecated>0</Deprecated>
+<Authorized>0</Authorized>
+<ReadRighttoLeft>0</ReadRighttoLeft>
+<Unavailable_x0028_NotGenerated_x0029_>0</Unavailable_x0028_NotGenerated_x0029_>
+</_x0031_0_Instruments>
+<_x0031_0_Instruments>
+<InstrumentID>185</InstrumentID>
+<InstrumentName>PHQ-9-A-EN-AU</InstrumentName>
+<InstrumentFamily>4</InstrumentFamily>
+<Language>1</Language>
+<Country>10</Country>
+<Informant>4</Informant>
+<Deprecated>0</Deprecated>
+<Authorized>0</Authorized>
+<ReadRighttoLeft>0</ReadRighttoLeft>
+<Unavailable_x0028_NotGenerated_x0029_>0</Unavailable_x0028_NotGenerated_x0029_>
+</_x0031_0_Instruments>
+<_x0031_0_Instruments>
+<InstrumentID>186</InstrumentID>
+<InstrumentName>PHQ-9-A-EN-HK</InstrumentName>
+<InstrumentFamily>4</InstrumentFamily>
+<Language>1</Language>
+<Country>11</Country>
+<Informant>4</Informant>
+<Deprecated>0</Deprecated>
+<Authorized>0</Authorized>
+<ReadRighttoLeft>0</ReadRighttoLeft>
+<Unavailable_x0028_NotGenerated_x0029_>0</Unavailable_x0028_NotGenerated_x0029_>
+</_x0031_0_Instruments>
+<_x0031_0_Instruments>
+<InstrumentID>187</InstrumentID>
+<InstrumentName>PHQ-4-A-EN</InstrumentName>
+<InstrumentFamily>4</InstrumentFamily>
+<Language>1</Language>
+<Informant>4</Informant>
+<Deprecated>0</Deprecated>
+<Authorized>0</Authorized>
+<ReadRighttoLeft>0</ReadRighttoLeft>
+<Unavailable_x0028_NotGenerated_x0029_>0</Unavailable_x0028_NotGenerated_x0029_>
+</_x0031_0_Instruments>
+<_x0031_0_Instruments>
+<InstrumentID>188</InstrumentID>
+<InstrumentName>PHQ-9-A-FR-FR</InstrumentName>
+<InstrumentFamily>4</InstrumentFamily>
+<Language>1</Language>
+<Country>4</Country>
+<Informant>4</Informant>
+<Deprecated>0</Deprecated>
+<Authorized>0</Authorized>
 <ReadRighttoLeft>0</ReadRighttoLeft>
 <Unavailable_x0028_NotGenerated_x0029_>0</Unavailable_x0028_NotGenerated_x0029_>
 </_x0031_0_Instruments>

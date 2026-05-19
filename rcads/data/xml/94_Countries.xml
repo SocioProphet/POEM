@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="94_Countries.xsd" generated="2026-05-19T15:16:45">
+<_x0039_4_Countries>
+<CountryID>4</CountryID>
+<CountryNameinEnglish>France</CountryNameinEnglish>
+<ISO_x0020_3166_x0020_Country_x0020_Code>FR</ISO_x0020_3166_x0020_Country_x0020_Code>
+</_x0039_4_Countries>
+<_x0039_4_Countries>
+<CountryID>5</CountryID>
+<CountryNameinEnglish>Germany</CountryNameinEnglish>
+<ISO_x0020_3166_x0020_Country_x0020_Code>DE</ISO_x0020_3166_x0020_Country_x0020_Code>
+</_x0039_4_Countries>
+<_x0039_4_Countries>
+<CountryID>6</CountryID>
+<CountryNameinEnglish>Japan</CountryNameinEnglish>
+<ISO_x0020_3166_x0020_Country_x0020_Code>JP</ISO_x0020_3166_x0020_Country_x0020_Code>
+</_x0039_4_Countries>
+<_x0039_4_Countries>
+<CountryID>7</CountryID>
+<CountryNameinEnglish>Brazil</CountryNameinEnglish>
+<ISO_x0020_3166_x0020_Country_x0020_Code>BR</ISO_x0020_3166_x0020_Country_x0020_Code>
+</_x0039_4_Countries>
+<_x0039_4_Countries>
+<CountryID>8</CountryID>
+<CountryNameinEnglish>Canada</CountryNameinEnglish>
+<ISO_x0020_3166_x0020_Country_x0020_Code>CA</ISO_x0020_3166_x0020_Country_x0020_Code>
+</_x0039_4_Countries>
+<_x0039_4_Countries>
+<CountryID>9</CountryID>
+<CountryNameinEnglish>United Kingdom</CountryNameinEnglish>
+<ISO_x0020_3166_x0020_Country_x0020_Code>UK</ISO_x0020_3166_x0020_Country_x0020_Code>
+</_x0039_4_Countries>
+<_x0039_4_Countries>
+<CountryID>10</CountryID>
+<CountryNameinEnglish>Australia</CountryNameinEnglish>
+<ISO_x0020_3166_x0020_Country_x0020_Code>AU</ISO_x0020_3166_x0020_Country_x0020_Code>
+</_x0039_4_Countries>
+<_x0039_4_Countries>
+<CountryID>11</CountryID>
+<CountryNameinEnglish>Hong Kong</CountryNameinEnglish>
+<ISO_x0020_3166_x0020_Country_x0020_Code>HK</ISO_x0020_3166_x0020_Country_x0020_Code>
+</_x0039_4_Countries>
+<_x0039_4_Countries>
+<CountryID>1</CountryID>
+<CountryNameinEnglish>United States</CountryNameinEnglish>
+<ISO_x0020_3166_x0020_Country_x0020_Code>US</ISO_x0020_3166_x0020_Country_x0020_Code>
+</_x0039_4_Countries>
+<_x0039_4_Countries>
+<CountryID>2</CountryID>
+<CountryNameinEnglish>Denmark</CountryNameinEnglish>
+<ISO_x0020_3166_x0020_Country_x0020_Code>DK</ISO_x0020_3166_x0020_Country_x0020_Code>
+</_x0039_4_Countries>
+<_x0039_4_Countries>
+<CountryID>3</CountryID>
+<CountryNameinEnglish>Netherlands</CountryNameinEnglish>
+<ISO_x0020_3166_x0020_Country_x0020_Code>NL</ISO_x0020_3166_x0020_Country_x0020_Code>
+</_x0039_4_Countries>
+</dataroot>
