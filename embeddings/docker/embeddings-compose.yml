@@ -1,0 +1,19 @@
+services:
+  embeddings:
+    build:
+      context: ..
+      dockerfile: docker/Containerfile-embeddings
+    volumes:
+      # Mount your RDF graph (TTL files) here — read-only
+      - ./graph:/data/graph:ro,Z
+      # Embedding output (.npy files, templates.txt) written here
+      - ./embeddings_output:/data/embeddings:Z
+    environment:
+      EMBED_BASE_URL: http://idea-llm-02.idea.rpi.edu:1234/v1
+      EMBED_MODEL: qwen3-embedding:latest
+      BATCH_SIZE: "50"
+      # Override if your TTL files are in a subfolder of /data/graph:
+      # POEM_PROJECT_ROOT: /data/graph/myontology
+      # Override for a different embedding server:
+      # EMBED_BASE_URL: http://my-server:1234/v1
+    command: pipeline

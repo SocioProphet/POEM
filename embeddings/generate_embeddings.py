@@ -30,7 +30,8 @@ from openai import OpenAI
 # Load and parse templates_official.txt into sections
 # ---------------------------------------------------------------------------
 _HERE = os.path.dirname(os.path.abspath(__file__))
-TEMPLATES_PATH = os.path.join(_HERE, "templates_official.txt")
+TEMPLATES_PATH = os.environ.get("TEMPLATES_PATH", os.path.join(_HERE, "templates_official.txt"))
+EMBEDDINGS_DIR = os.environ.get("EMBEDDINGS_DIR", _HERE)
 
 with open(TEMPLATES_PATH, encoding="utf-8") as f:
     raw = f.read()
@@ -68,18 +69,17 @@ for name, blocks in sections.items():
 # ---------------------------------------------------------------------------
 # OpenAI-compatible embeddings client
 # ---------------------------------------------------------------------------
-client = OpenAI(
-    base_url="http://idea-llm-02.idea.rpi.edu:1234/v1",
-    api_key="not-needed"
-)
+_BASE_URL = os.environ.get("EMBED_BASE_URL", "http://idea-llm-02.idea.rpi.edu:1234/v1")
+_MODEL    = os.environ.get("EMBED_MODEL", "qwen3-embedding:latest")
+client = OpenAI(base_url=_BASE_URL, api_key="not-needed")
 
-BATCH_SIZE = 50  # number of texts per API call — adjust if needed
+BATCH_SIZE = int(os.environ.get("BATCH_SIZE", "50"))
 
 # ---------------------------------------------------------------------------
 # Embed each section and save one .npy per paragraph
 # ---------------------------------------------------------------------------
 for section_name, texts in sections.items():
-    out_dir = os.path.join(_HERE, section_name)
+    out_dir = os.path.join(EMBEDDINGS_DIR, section_name)
     os.makedirs(out_dir, exist_ok=True)
 
     # Save texts index so paragraph_N.npy can be mapped back to source text
@@ -92,7 +92,7 @@ for section_name, texts in sections.items():
         print(f"  Embedding batch {i // BATCH_SIZE + 1} ({len(batch)} texts)...")
 
         response = client.embeddings.create(
-            model="qwen3-embedding:latest",
+            model=_MODEL,
             input=batch
         )
 
