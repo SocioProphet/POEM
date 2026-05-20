@@ -20,10 +20,7 @@ import argparse
 import glob
 from collections import defaultdict
 
-PROJECT_ROOT = os.environ.get(
-    "POEM_PROJECT_ROOT",
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-)
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, PROJECT_ROOT)
 
 from rdflib import Graph
@@ -302,7 +299,7 @@ def run_collections(g: Graph) -> list:
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", default=os.environ.get("TEMPLATES_OUTPUT", os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates.txt")),
+    parser.add_argument("--output", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), "templates.txt"),
                         help="File to write templates to (default: embeddings/templates.txt)")
     parser.add_argument("--only", choices=["instruments", "scales", "collections"],
                         default=None, help="Generate templates for one node type only")

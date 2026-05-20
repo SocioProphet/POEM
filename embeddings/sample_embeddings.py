@@ -17,7 +17,7 @@ from openai import OpenAI
 # Load a handful of template blocks from templates.txt
 # ---------------------------------------------------------------------------
 _HERE = os.path.dirname(os.path.abspath(__file__))
-TEMPLATES_PATH = os.environ.get("TEMPLATES_PATH", os.path.join(_HERE, "templates.txt"))
+TEMPLATES_PATH = os.path.join(_HERE, "templates.txt")
 
 with open(TEMPLATES_PATH, encoding="utf-8") as f:
     raw = f.read()
@@ -31,12 +31,13 @@ texts = all_blocks[:3]
 # ---------------------------------------------------------------------------
 # Call the embeddings endpoint (exactly as provided)
 # ---------------------------------------------------------------------------
-_BASE_URL = os.environ.get("EMBED_BASE_URL", "http://idea-llm-02.idea.rpi.edu:1234/v1")
-_MODEL    = os.environ.get("EMBED_MODEL", "qwen3-embedding:latest")
-client = OpenAI(base_url=_BASE_URL, api_key="not-needed")
+client = OpenAI(
+    base_url="http://idea-llm-02.idea.rpi.edu:1234/v1",
+    api_key="not-needed"
+)
 
 response = client.embeddings.create(
-    model=_MODEL,
+    model="qwen3-embedding:latest",
     input=texts
 )
 

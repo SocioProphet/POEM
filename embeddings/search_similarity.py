@@ -29,11 +29,11 @@ from openai import OpenAI
 _HERE = os.path.dirname(os.path.abspath(__file__))
 SECTIONS = ["instruments", "scales", "collections"]
 DEFAULT_TOP_K = 5
-EMBEDDINGS_DIR = os.environ.get("EMBEDDINGS_DIR", _HERE)
 
-_BASE_URL = os.environ.get("EMBED_BASE_URL", "http://idea-llm-02.idea.rpi.edu:1234/v1")
-_MODEL    = os.environ.get("EMBED_MODEL", "qwen3-embedding:latest")
-client = OpenAI(base_url=_BASE_URL, api_key="not-needed")
+client = OpenAI(
+    base_url="http://idea-llm-02.idea.rpi.edu:1234/v1",
+    api_key="not-needed"
+)
 
 # ---------------------------------------------------------------------------
 # Load all stored embeddings and texts
@@ -52,7 +52,7 @@ def load_embeddings() -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     all_sections = []
 
     for section in SECTIONS:
-        section_dir = os.path.join(EMBEDDINGS_DIR, section)
+        section_dir = os.path.join(_HERE, section)
         if not os.path.isdir(section_dir):
             print(f"  Warning: section folder not found: {section_dir}")
             print(f"  Run generate_embeddings.py first to create embeddings.")
@@ -100,7 +100,7 @@ def load_embeddings() -> tuple[np.ndarray, np.ndarray, np.ndarray]:
 def embed_query(query: str) -> np.ndarray:
     """Return a 1D float32 embedding for the query string."""
     response = client.embeddings.create(
-        model=_MODEL,
+        model="qwen3-embedding:latest",
         input=[query]
     )
     return np.array(response.data[0].embedding, dtype=np.float32)
