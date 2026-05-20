@@ -53,6 +53,9 @@ const instrumentCards: instrumentProps[] = [
   },
 ]; 
 export default function Home() {
+
+    
+  
   async function searchGraphSmall(query: string){
     const q = query.toLowerCase();
     try{
@@ -126,7 +129,7 @@ export default function Home() {
             Psychometric Ontology of Experiences and instruments
           </h2>
           <p className="mt-5 text-base md:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Browser for mental health instruments to make assessment easier for
+            Broswer for mental health instruments to make assessment easier for
             researchers and clinicians.
           </p>
         </div>
@@ -177,9 +180,6 @@ export default function Home() {
             to="/Glossary"
           >
             Learn More
-          </Link>
-          <Link className="p-3 border border-white transition-all duration-200 hover:bg-slate-600" to="/Filter">
-          Filter Instruments
           </Link>
         </div>
       </section>

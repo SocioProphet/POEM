@@ -12,7 +12,6 @@ import Scales from './pages/Scales';
 import Glossary from './pages/Glossary';
 import Search from './pages/Search';
 import SummarizePage from './components/SummarizePage';
-import Filter from './pages/Filter';
 export default function App() {
   return (
     <div className='flex flex-col min-h-screen'>
@@ -29,7 +28,6 @@ export default function App() {
       <Route path= "/instruments/individual/:id" element={<IndividualInstrumentPage />} />
       <Route path = "/Glossary" element = {<Glossary/>} />
       <Route path = "/Search/" element = {<Search/>} /> 
-      <Route path = "/Filter" element = {<Filter/>}/>
     </Routes>
     </main>
      <Footer/>

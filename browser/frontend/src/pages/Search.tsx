@@ -75,7 +75,7 @@ export default function Search(){
     return <Loading/>
   }
      return (
-        <div className="flex flex-col gap-6 items-center mt-12 "> <h1 className="text-3xl font-bold text-slate-600">Search Results</h1>
+        <div className="flex flex-col gap-6 items-center mt-12 "> <h2 className="text-3xl font-bold text-slate-600">Search Results</h2>
         {results.map((result, index) => (
           <Link to= {`/${result.path}`} key={index} className="shadow-md hover:shadow-2xl w-10/12 text-xl p-5 m-2  border-2 border-gray-200 transition duration-300 ease-in-out hover:scale-105 ">
             {result.title}</Link>
