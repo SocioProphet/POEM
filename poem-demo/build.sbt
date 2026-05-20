@@ -16,7 +16,7 @@ scalaVersion := "3.3.7"
 libraryDependencies += guice
 
 // https://mvnrepository.com/artifact/org.apache.jena/jena-arq
-libraryDependencies += "org.apache.jena" % "jena-arq" % "6.0.0"
+libraryDependencies += "org.apache.jena" % "jena-arq" % "6.1.0"
 
 // https://mvnrepository.com/artifact/org.webjars/bootstrap
 libraryDependencies += "org.webjars" % "bootstrap" % "5.3.8"
@@ -31,19 +31,19 @@ libraryDependencies += "org.webjars" % "jquery-form" % "4.2.2"
 libraryDependencies += "org.webjars.npm" % "choices.js" % "11.2.1"
 
 // https://mvnrepository.com/artifact/com.google.code.gson/gson
-libraryDependencies += "com.google.code.gson" % "gson" % "2.13.2"
+libraryDependencies += "com.google.code.gson" % "gson" % "2.14.0"
 
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
-libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.21.2"
+libraryDependencies += "com.fasterxml.jackson.core" % "jackson-databind" % "2.21.3"
 
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
-libraryDependencies += "com.fasterxml.jackson.core" % "jackson-core" % "2.21.2"
+libraryDependencies += "com.fasterxml.jackson.core" % "jackson-core" % "2.21.3"
 
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
 libraryDependencies += "com.fasterxml.jackson.core" % "jackson-annotations" % "2.21"
 
 // https://mvnrepository.com/artifact/com.fasterxml.jackson.module/jackson-module-scala
-libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.21.2"
+libraryDependencies += "com.fasterxml.jackson.module" %% "jackson-module-scala" % "2.21.3"
 
 // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
 libraryDependencies += "org.apache.poi" % "poi-ooxml" % "5.5.1"
@@ -67,10 +67,10 @@ libraryDependencies += "ca.uhn.hapi.fhir" % "hapi-fhir-structures-dstu3" % "8.8.
 libraryDependencies += "ca.uhn.hapi.fhir" % "hapi-fhir-structures-dstu2" % "8.8.1"
 
 // https://mvnrepository.com/artifact/com.openai/openai-java
-libraryDependencies += "com.openai" % "openai-java" % "4.30.0"
+libraryDependencies += "com.openai" % "openai-java" % "4.36.0"
 
 // https://mvnrepository.com/artifact/org.json/json
 libraryDependencies += "org.json" % "json" % "20251224"
 
 // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-to-slf4j
-libraryDependencies += "org.apache.logging.log4j" % "log4j-to-slf4j" % "2.25.4"
+libraryDependencies += "org.apache.logging.log4j" % "log4j-to-slf4j" % "2.26.0"
