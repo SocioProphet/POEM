@@ -51,6 +51,13 @@
     rml:iterator "/dataroot/_x0039_0_Languages"
   ].
 
+:TriplesMap6 a rr:TriplesMap;
+  rml:logicalSource [
+    rml:source "data/xml/94_Countries.xml";
+    rml:referenceFormulation ql:XPath;
+    rml:iterator "/dataroot/_x0039_4_Countries"
+  ].
+
 :TriplesMap rr:subjectMap [
   rr:template "http://purl.org/twc/poem/individual/instrument/{InstrumentID}"
 ].
@@ -69,6 +76,10 @@
 
 :TriplesMap5 rr:subjectMap [
   rr:template "http://purl.org/twc/poem/individual/language/{LanguageID}"
+].
+
+:TriplesMap6 rr:subjectMap [
+  rr:template "http://purl.org/twc/poem/individual/country/{CountryID}"
 ].
 
 :TriplesMap rr:predicateObjectMap [
@@ -197,6 +208,28 @@
     rr:joinCondition [
       rr:child "Language";
       rr:parent "LanguageID";
+    ];
+  ];
+].
+
+:TriplesMap rr:predicateObjectMap [
+  rr:predicate sio:SIO_000008;
+  rr:objectMap [
+    rr:parentTriplesMap :TriplesMap6;
+    rr:joinCondition [
+      rr:child "Country";
+      rr:parent "CountryID";
+    ];
+  ];
+].
+
+:TriplesMap rr:predicateObjectMap [
+  rr:predicate sio:hasAttribute;
+  rr:objectMap [
+    rr:parentTriplesMap :TriplesMap6;
+    rr:joinCondition [
+      rr:child "Country";
+      rr:parent "CountryID";
     ];
   ];
 ].
