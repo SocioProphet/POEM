@@ -33,7 +33,6 @@ public record InstrumentCollectionIntent(String collectionUri) implements ChatIn
             PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
             PREFIX sio:   <http://semanticscience.org/resource/>
             PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
-            PREFIX schema: <http://schema.org/>
             PREFIX vstoi: <http://purl.org/twc/vstoi/>
 
             SELECT ?collection
@@ -60,16 +59,13 @@ public record InstrumentCollectionIntent(String collectionUri) implements ChatIn
               OPTIONAL {
                 ?memberInstrument sio:SIO_000008 ?language .
                 ?language rdf:type sio:SIO_000104 .
-                OPTIONAL { ?language rdfs:label ?languageLabelLiteral }
-                OPTIONAL { ?language skos:notation ?languageNotationLiteral }
-                OPTIONAL { ?language schema:countryCode ?languageCountryLiteral }
-                BIND(IF(BOUND(?languageLabelLiteral), STR(?languageLabelLiteral), STR(?language)) AS ?languageLabelValue)
-                BIND(IF(BOUND(?languageNotationLiteral), STR(?languageNotationLiteral), "") AS ?languageNotationValue)
-                BIND(IF(BOUND(?languageCountryLiteral), STR(?languageCountryLiteral), "") AS ?languageCountryValue)
+                ?language rdfs:label ?languageLabelLiteral .
+                ?language skos:notation ?languageNotationLiteral .
                 BIND(CONCAT(
-                        ?languageLabelValue,
-                        IF(?languageNotationValue != "", CONCAT(" [", ?languageNotationValue, "]"), ""),
-                        IF(?languageCountryValue != "", CONCAT(" (", ?languageCountryValue, ")"), "")
+                        STR(?languageLabelLiteral),
+                        " [",
+                        STR(?languageNotationLiteral),
+                        "]"
                     ) AS ?languageDisplay)
               }
 

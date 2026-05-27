@@ -33,7 +33,6 @@ public record InstrumentIntent(String instrumentUri) implements ChatIntent {
             PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
             PREFIX sio:   <http://semanticscience.org/resource/>
             PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
-            PREFIX schema: <http://schema.org/>
             PREFIX vstoi: <http://purl.org/twc/vstoi/>
 
             SELECT ?instrument
@@ -42,7 +41,6 @@ public record InstrumentIntent(String instrumentUri) implements ChatIntent {
                    (GROUP_CONCAT(DISTINCT COALESCE(?informantLabel, STR(?informant)); separator=" | ") AS ?informants)
                    (SAMPLE(?languageLabelLiteral) AS ?languageLabel)
                    (SAMPLE(?languageNotationLiteral) AS ?languageNotation)
-                   (SAMPLE(?languageCountryLiteral) AS ?languageCountryCode)
                    (COUNT(DISTINCT ?itemForCount) AS ?itemCount)
             WHERE {
               VALUES ?instrument { <%s> }
@@ -54,9 +52,8 @@ public record InstrumentIntent(String instrumentUri) implements ChatIntent {
               OPTIONAL {
                 ?instrument sio:SIO_000008 ?language .
                 ?language rdf:type sio:SIO_000104 .
-                OPTIONAL { ?language rdfs:label ?languageLabelLiteral }
-                OPTIONAL { ?language skos:notation ?languageNotationLiteral }
-                OPTIONAL { ?language schema:countryCode ?languageCountryLiteral }
+                ?language rdfs:label ?languageLabelLiteral .
+                ?language skos:notation ?languageNotationLiteral .
               }
               OPTIONAL {
                 ?instrument sio:SIO_000008 ?informant .

@@ -10,7 +10,7 @@ public class LanguageTest {
 
     @Test
     public void gsonSerializationDoesNotDuplicateLabelField() {
-        Language language = new Language("eng", "US");
+        Language language = new Language("eng");
         language.setUri("http://example.org/languages/eng-US");
         language.setLabel("English");
 

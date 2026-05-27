@@ -25,7 +25,7 @@ public class ApiController extends Controller {
             for (Language language : languages) {
                 ObjectNode languageNode = Json.newObject();
                 languageNode.put("value", language.getBCP47());
-                languageNode.put("label", language.getLabelWithCountry());
+                languageNode.put("label", language.getDisplayLabel());
                 languagesJson.add(languageNode);
             }
             

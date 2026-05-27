@@ -47,7 +47,6 @@ public record ListInstrumentCollectionsIntent(List<String> languageUris,
              .append("PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n")
              .append("PREFIX skos: <http://www.w3.org/2004/02/skos/core#>\n")
              .append("PREFIX sio:  <http://semanticscience.org/resource/>\n")
-             .append("PREFIX schema: <http://schema.org/>\n")
              .append("SELECT ?collection\n")
              .append("       (SAMPLE(?label) AS ?collectionLabel)\n")
              .append("       (SAMPLE(?definition) AS ?collectionDefinition)\n")

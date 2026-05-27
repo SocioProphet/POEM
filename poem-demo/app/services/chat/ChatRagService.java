@@ -4,7 +4,6 @@ import models.Instrument;
 import models.QuestionnaireScale;
 import models.chat.ChatMessage;
 import org.apache.jena.rdf.model.Model;
-import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.vocabulary.RDFS;
 import org.apache.jena.vocabulary.SKOS;
@@ -246,12 +245,7 @@ public class ChatRagService {
             if (resource != null) {
                 String label = resource.hasProperty(RDFS.label) ? resource.getProperty(RDFS.label).getString() : null;
                 String notation = resource.hasProperty(SKOS.notation) ? resource.getProperty(SKOS.notation).getString() : null;
-                Property countryProperty = model.createProperty("http://schema.org/countryCode");
-                String country = resource.hasProperty(countryProperty) ? resource.getProperty(countryProperty).getString() : null;
                 String display = label != null ? label : notation;
-                if (display != null && country != null && !country.isBlank()) {
-                    display = display + " (" + country + ")";
-                }
                 if (display != null) {
                     return labelPrefix + ": " + display + " (" + uri + ")";
                 }

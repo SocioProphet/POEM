@@ -27,17 +27,17 @@ public record InstrumentLanguagesIntent(String instrumentUri) implements ChatInt
     public String toSparql() {
         return """
             PREFIX sio:   <http://semanticscience.org/resource/>
+            PREFIX rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
             PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX schema: <http://schema.org/>
             PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
 
-            SELECT DISTINCT ?language ?label ?isoCode ?country
+            SELECT DISTINCT ?language ?label ?isoCode
             WHERE {
               VALUES ?instrument { <%s> }
               ?instrument sio:hasAttribute ?language .
-              OPTIONAL { ?language rdfs:label ?label }
-              OPTIONAL { ?language schema:countryCode ?country }
-              OPTIONAL { ?language skos:notation ?isoCode }
+              ?language rdf:type sio:SIO_000104 .
+              ?language rdfs:label ?label .
+              ?language skos:notation ?isoCode .
             }
             """.formatted(instrumentUri);
     }

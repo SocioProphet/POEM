@@ -547,13 +547,10 @@ public class ChatIntentResolver {
                 tokens.add(language.getBCP47().toLowerCase(Locale.ROOT));
                 tokens.add(language.getBCP47().replace("-", "").toLowerCase(Locale.ROOT));
             }
-            if (language.getCountryCode() != null) {
-                tokens.add(language.getCountryCode().toLowerCase(Locale.ROOT));
-            }
             if (tokens.isEmpty()) {
                 tokens.add(language.getUri());
             }
-            String label = language.getLabelWithCountry();
+            String label = language.getDisplayLabel();
             entries.add(new ResourceEntry(label != null ? label : language.getUri(), language.getUri(), tokens));
         }
         entries.sort(Comparator.comparing(e -> e.label().toLowerCase(Locale.ROOT)));
