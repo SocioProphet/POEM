@@ -1,0 +1,57 @@
+@prefix : <http://example.org/rules/> .
+@prefix csvw: <http://www.w3.org/ns/csvw#> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix poem: <http://purl.org/twc/poem/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://w3id.org/rml/> .
+@prefix schema: <http://schema.org/> .
+@prefix sio: <http://semanticscience.org/resource/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vstoi: <http://purl.org/twc/vstoi/> .
+
+<http://purl.org/twc/poem/individual/country/1> a sio:Country, sio:SIO_000664;
+  rdfs:label "United States";
+  skos:notation "US" .
+
+<http://purl.org/twc/poem/individual/country/10> a sio:Country, sio:SIO_000664;
+  rdfs:label "Australia";
+  skos:notation "AU" .
+
+<http://purl.org/twc/poem/individual/country/11> a sio:Country, sio:SIO_000664;
+  rdfs:label "Hong Kong";
+  skos:notation "HK" .
+
+<http://purl.org/twc/poem/individual/country/2> a sio:Country, sio:SIO_000664;
+  rdfs:label "Denmark";
+  skos:notation "DK" .
+
+<http://purl.org/twc/poem/individual/country/3> a sio:Country, sio:SIO_000664;
+  rdfs:label "Netherlands";
+  skos:notation "NL" .
+
+<http://purl.org/twc/poem/individual/country/4> a sio:Country, sio:SIO_000664;
+  rdfs:label "France";
+  skos:notation "FR" .
+
+<http://purl.org/twc/poem/individual/country/5> a sio:Country, sio:SIO_000664;
+  rdfs:label "Germany";
+  skos:notation "DE" .
+
+<http://purl.org/twc/poem/individual/country/6> a sio:Country, sio:SIO_000664;
+  rdfs:label "Japan";
+  skos:notation "JP" .
+
+<http://purl.org/twc/poem/individual/country/7> a sio:Country, sio:SIO_000664;
+  rdfs:label "Brazil";
+  skos:notation "BR" .
+
+<http://purl.org/twc/poem/individual/country/8> a sio:Country, sio:SIO_000664;
+  rdfs:label "Canada";
+  skos:notation "CA" .
+
+<http://purl.org/twc/poem/individual/country/9> a sio:Country, sio:SIO_000664;
+  rdfs:label "United Kingdom";
+  skos:notation "UK" .

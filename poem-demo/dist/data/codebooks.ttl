@@ -353,6 +353,51 @@
     <http://purl.org/twc/poem/individual/responseOption/167>, <http://purl.org/twc/poem/individual/responseOption/168>;
   rdfs:label "4.0-item-Frequency-Bengali" .
 
+<http://purl.org/twc/poem/individual/codebook/44> a vstoi:Codebook;
+  sio:SIO_000008 <http://purl.org/twc/poem/individual/experience/1>;
+  sio:SIO_000059 <http://purl.org/twc/poem/individual/responseOption/169>, <http://purl.org/twc/poem/individual/responseOption/170>,
+    <http://purl.org/twc/poem/individual/responseOption/171>, <http://purl.org/twc/poem/individual/responseOption/172>;
+  sio:hasAttribute <http://purl.org/twc/poem/individual/experience/1>;
+  sio:hasMember <http://purl.org/twc/poem/individual/responseOption/169>, <http://purl.org/twc/poem/individual/responseOption/170>,
+    <http://purl.org/twc/poem/individual/responseOption/171>, <http://purl.org/twc/poem/individual/responseOption/172>;
+  rdfs:label "4.0-item-Frequency-Chinese (Traditional)" .
+
+<http://purl.org/twc/poem/individual/codebook/45> a vstoi:Codebook;
+  sio:SIO_000008 <http://purl.org/twc/poem/individual/experience/1>;
+  sio:SIO_000059 <http://purl.org/twc/poem/individual/responseOption/173>, <http://purl.org/twc/poem/individual/responseOption/174>,
+    <http://purl.org/twc/poem/individual/responseOption/175>, <http://purl.org/twc/poem/individual/responseOption/176>;
+  sio:hasAttribute <http://purl.org/twc/poem/individual/experience/1>;
+  sio:hasMember <http://purl.org/twc/poem/individual/responseOption/173>, <http://purl.org/twc/poem/individual/responseOption/174>,
+    <http://purl.org/twc/poem/individual/responseOption/175>, <http://purl.org/twc/poem/individual/responseOption/176>;
+  rdfs:label "4.0-item-Frequency-Malay" .
+
+<http://purl.org/twc/poem/individual/codebook/46> a vstoi:Codebook;
+  sio:SIO_000008 <http://purl.org/twc/poem/individual/experience/1>;
+  sio:SIO_000059 <http://purl.org/twc/poem/individual/responseOption/177>, <http://purl.org/twc/poem/individual/responseOption/178>,
+    <http://purl.org/twc/poem/individual/responseOption/179>, <http://purl.org/twc/poem/individual/responseOption/180>;
+  sio:hasAttribute <http://purl.org/twc/poem/individual/experience/1>;
+  sio:hasMember <http://purl.org/twc/poem/individual/responseOption/177>, <http://purl.org/twc/poem/individual/responseOption/178>,
+    <http://purl.org/twc/poem/individual/responseOption/179>, <http://purl.org/twc/poem/individual/responseOption/180>;
+  rdfs:label "4.0-item-Frequency-Albanian" .
+
+<http://purl.org/twc/poem/individual/codebook/47> a vstoi:Codebook;
+  sio:SIO_000008 <http://purl.org/twc/poem/individual/experience/1>;
+  sio:SIO_000059 <http://purl.org/twc/poem/individual/responseOption/106>, <http://purl.org/twc/poem/individual/responseOption/107>,
+    <http://purl.org/twc/poem/individual/responseOption/109>, <http://purl.org/twc/poem/individual/responseOption/181>;
+  sio:hasAttribute <http://purl.org/twc/poem/individual/experience/1>;
+  sio:hasMember <http://purl.org/twc/poem/individual/responseOption/106>, <http://purl.org/twc/poem/individual/responseOption/107>,
+    <http://purl.org/twc/poem/individual/responseOption/109>, <http://purl.org/twc/poem/individual/responseOption/181>;
+  rdfs:label "4.3-item-Frequency-English" .
+
+<http://purl.org/twc/poem/individual/codebook/48> a vstoi:Codebook;
+  sio:SIO_000008 <http://purl.org/twc/poem/individual/experience/1>;
+  sio:SIO_000059 <http://purl.org/twc/poem/individual/responseOption/182>, <http://purl.org/twc/poem/individual/responseOption/183>,
+    <http://purl.org/twc/poem/individual/responseOption/184>, <http://purl.org/twc/poem/individual/responseOption/185>;
+  sio:hasAttribute <http://purl.org/twc/poem/individual/experience/1>;
+  sio:hasMember <http://purl.org/twc/poem/individual/responseOption/182>, <http://purl.org/twc/poem/individual/responseOption/183>,
+    <http://purl.org/twc/poem/individual/responseOption/184>, <http://purl.org/twc/poem/individual/responseOption/185>;
+  rdfs:label "4.1-item-Frequency-French" .
+
 <http://purl.org/twc/poem/individual/codebook/5> a vstoi:Codebook;
   sio:SIO_000008 <http://purl.org/twc/poem/individual/experience/1>;
   sio:SIO_000059 <http://purl.org/twc/poem/individual/responseOption/17>, <http://purl.org/twc/poem/individual/responseOption/18>,

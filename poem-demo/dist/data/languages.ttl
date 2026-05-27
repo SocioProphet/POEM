@@ -13,7 +13,6 @@
 @prefix vstoi: <http://purl.org/twc/vstoi/> .
 
 <http://purl.org/twc/poem/individual/language/1> a sio:Language, sio:SIO_000104;
-  schema:countryCode "US";
   rdfs:label "English";
   skos:notation "EN" .
 
@@ -30,7 +29,6 @@
   skos:notation "IS" .
 
 <http://purl.org/twc/poem/individual/language/13> a sio:Language, sio:SIO_000104;
-  schema:countryCode "JP";
   rdfs:label "Japanese";
   skos:notation "JA" .
 
@@ -55,7 +53,6 @@
   skos:notation "PL" .
 
 <http://purl.org/twc/poem/individual/language/19> a sio:Language, sio:SIO_000104;
-  schema:countryCode "BR";
   rdfs:label "Portuguese";
   skos:notation "PT" .
 
@@ -107,10 +104,7 @@
   rdfs:label "Chinese (Simplified)";
   skos:notation "ZH" .
 
-<http://purl.org/twc/poem/individual/language/30> a sio:Language, sio:SIO_000104;
-  schema:countryCode "CA";
-  rdfs:label "French";
-  skos:notation "FR" .
+<http://purl.org/twc/poem/individual/language/30> a sio:Language, sio:SIO_000104 .
 
 <http://purl.org/twc/poem/individual/language/31> a sio:Language, sio:SIO_000104;
   rdfs:label "Hindi";
@@ -149,7 +143,6 @@
   skos:notation "VI" .
 
 <http://purl.org/twc/poem/individual/language/4> a sio:Language, sio:SIO_000104;
-  schema:countryCode "DK";
   rdfs:label "Danish";
   skos:notation "DA" .
 
@@ -161,8 +154,13 @@
   rdfs:label "Zulu";
   skos:notation "ZU" .
 
+<http://purl.org/twc/poem/individual/language/42> a sio:Language, sio:SIO_000104;
+  rdfs:label "Albanian";
+  skos:notation "SQ" .
+
+<http://purl.org/twc/poem/individual/language/43> a sio:Language, sio:SIO_000104 .
+
 <http://purl.org/twc/poem/individual/language/5> a sio:Language, sio:SIO_000104;
-  schema:countryCode "NL";
   rdfs:label "Dutch";
   skos:notation "NL" .
 
@@ -175,11 +173,9 @@
   skos:notation "FI" .
 
 <http://purl.org/twc/poem/individual/language/8> a sio:Language, sio:SIO_000104;
-  schema:countryCode "FR";
   rdfs:label "French";
   skos:notation "FR" .
 
 <http://purl.org/twc/poem/individual/language/9> a sio:Language, sio:SIO_000104;
-  schema:countryCode "DE";
   rdfs:label "German";
   skos:notation "DE" .

@@ -72,10 +72,49 @@
   schema:sameAs <https://orcid.org/0009-0006-8635-8231>;
   rdfs:label "Olivia Cox" .
 
+<http://purl.org/twc/poem/individual/person/113> a prov:Person;
+  rdfs:label "Anjali Joglekar" .
+
+<http://purl.org/twc/poem/individual/person/114> a prov:Person;
+  rdfs:label "Ujjwal Nene" .
+
+<http://purl.org/twc/poem/individual/person/115> a prov:Person;
+  rdfs:label "Bindu Patni" .
+
+<http://purl.org/twc/poem/individual/person/116> a prov:Person;
+  schema:identifier "0000-0001-9174-2525";
+  schema:sameAs <https://orcid.org/0000-0001-9174-2525>;
+  rdfs:label "Syethemba Nkosi" .
+
+<http://purl.org/twc/poem/individual/person/117> a prov:Person;
+  schema:identifier "0000-0002-0000-324X";
+  schema:sameAs <https://orcid.org/0000-0002-0000-324X>;
+  rdfs:label "Nondumiso Dlamini" .
+
+<http://purl.org/twc/poem/individual/person/118> a prov:Person;
+  schema:identifier "0000-0002-2924-715X";
+  schema:sameAs <https://orcid.org/0000-0002-2924-715X>;
+  rdfs:label "Truc Nguyen Thanh" .
+
+<http://purl.org/twc/poem/individual/person/119> a prov:Person;
+  schema:identifier "0000-0002-7423-573X";
+  schema:sameAs <https://orcid.org/0000-0002-7423-573X>;
+  rdfs:label "Tuyen Nguyen Thi Bich" .
+
 <http://purl.org/twc/poem/individual/person/12> a prov:Person;
   schema:identifier "0000-0001-8246-3479";
   schema:sameAs <https://orcid.org/0000-0001-8246-3479>;
   rdfs:label "Brad J. Nakamura" .
+
+<http://purl.org/twc/poem/individual/person/120> a prov:Person;
+  schema:identifier "0009-0009-2111-4887";
+  schema:sameAs <https://orcid.org/0009-0009-2111-4887>;
+  rdfs:label "Thuy Nguyen Thi Nhu" .
+
+<http://purl.org/twc/poem/individual/person/121> a prov:Person;
+  schema:identifier "0009-0004-3243-6236";
+  schema:sameAs <https://orcid.org/0009-0004-3243-6236>;
+  rdfs:label "Thuoc Huynh Thi Bich" .
 
 <http://purl.org/twc/poem/individual/person/13> a prov:Person;
   rdfs:label "Adam D. Bernstein" .

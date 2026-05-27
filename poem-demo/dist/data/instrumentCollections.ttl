@@ -53,7 +53,9 @@
     <http://purl.org/twc/poem/individual/instrument/171>, <http://purl.org/twc/poem/individual/instrument/172>,
     <http://purl.org/twc/poem/individual/instrument/173>, <http://purl.org/twc/poem/individual/instrument/174>,
     <http://purl.org/twc/poem/individual/instrument/175>, <http://purl.org/twc/poem/individual/instrument/176>,
-    <http://purl.org/twc/poem/individual/instrument/18>, <http://purl.org/twc/poem/individual/instrument/19>,
+    <http://purl.org/twc/poem/individual/instrument/177>, <http://purl.org/twc/poem/individual/instrument/178>,
+    <http://purl.org/twc/poem/individual/instrument/179>, <http://purl.org/twc/poem/individual/instrument/18>,
+    <http://purl.org/twc/poem/individual/instrument/180>, <http://purl.org/twc/poem/individual/instrument/19>,
     <http://purl.org/twc/poem/individual/instrument/2>, <http://purl.org/twc/poem/individual/instrument/20>,
     <http://purl.org/twc/poem/individual/instrument/21>, <http://purl.org/twc/poem/individual/instrument/22>,
     <http://purl.org/twc/poem/individual/instrument/23>, <http://purl.org/twc/poem/individual/instrument/24>,
@@ -135,7 +137,9 @@
     <http://purl.org/twc/poem/individual/instrument/171>, <http://purl.org/twc/poem/individual/instrument/172>,
     <http://purl.org/twc/poem/individual/instrument/173>, <http://purl.org/twc/poem/individual/instrument/174>,
     <http://purl.org/twc/poem/individual/instrument/175>, <http://purl.org/twc/poem/individual/instrument/176>,
-    <http://purl.org/twc/poem/individual/instrument/18>, <http://purl.org/twc/poem/individual/instrument/19>,
+    <http://purl.org/twc/poem/individual/instrument/177>, <http://purl.org/twc/poem/individual/instrument/178>,
+    <http://purl.org/twc/poem/individual/instrument/179>, <http://purl.org/twc/poem/individual/instrument/18>,
+    <http://purl.org/twc/poem/individual/instrument/180>, <http://purl.org/twc/poem/individual/instrument/19>,
     <http://purl.org/twc/poem/individual/instrument/2>, <http://purl.org/twc/poem/individual/instrument/20>,
     <http://purl.org/twc/poem/individual/instrument/21>, <http://purl.org/twc/poem/individual/instrument/22>,
     <http://purl.org/twc/poem/individual/instrument/23>, <http://purl.org/twc/poem/individual/instrument/24>,
@@ -206,8 +210,16 @@
   skos:notation "MTT" .
 
 <http://purl.org/twc/poem/individual/instrumentCollection/4> a poem:InstrumentCollection;
-  sio:SIO_000059 <http://purl.org/twc/poem/individual/instrument/106>;
-  sio:hasMember <http://purl.org/twc/poem/individual/instrument/106>;
+  sio:SIO_000059 <http://purl.org/twc/poem/individual/instrument/106>, <http://purl.org/twc/poem/individual/instrument/181>,
+    <http://purl.org/twc/poem/individual/instrument/182>, <http://purl.org/twc/poem/individual/instrument/183>,
+    <http://purl.org/twc/poem/individual/instrument/184>, <http://purl.org/twc/poem/individual/instrument/185>,
+    <http://purl.org/twc/poem/individual/instrument/186>, <http://purl.org/twc/poem/individual/instrument/187>,
+    <http://purl.org/twc/poem/individual/instrument/188>;
+  sio:hasMember <http://purl.org/twc/poem/individual/instrument/106>, <http://purl.org/twc/poem/individual/instrument/181>,
+    <http://purl.org/twc/poem/individual/instrument/182>, <http://purl.org/twc/poem/individual/instrument/183>,
+    <http://purl.org/twc/poem/individual/instrument/184>, <http://purl.org/twc/poem/individual/instrument/185>,
+    <http://purl.org/twc/poem/individual/instrument/186>, <http://purl.org/twc/poem/individual/instrument/187>,
+    <http://purl.org/twc/poem/individual/instrument/188>;
   rdfs:label "PHQ";
   skos:definition "Patient Health Questionnaire";
   skos:notation "PHQ" .
